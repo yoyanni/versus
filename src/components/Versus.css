@@ -1,0 +1,51 @@
+.versus {
+/* Display */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px #000;
+  /* Positioning */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  /* Text */
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.weightclass-container {
+  /* Display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d1d;
+
+  /* Text */
+  font-size: 14px;
+  letter-spacing: 0.5rem;
+}
+
+.fighter-container {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding: 1rem;
+}
+
+.vs {
+  margin-inline: 2em;
+}
+
+.fighter-select {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 1rem;
+}

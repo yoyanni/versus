@@ -18,3 +18,7 @@ It will:
 #### Initial Commit
 
 Just getting everything setup for starters.
+
+### Add Navbar and Versusbar
+
+The Navbar and Versusbar were added according to figma design. There might be some stuff that will need to be tweak later but for now it is serving its purpose. At the moment, everything is hardcoded but that will change once we get the general "shape" of the website. As you can see it will be mobile first and eventually once there is some functionality it will update to accomadate desktops.

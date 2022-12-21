@@ -1,0 +1,39 @@
+nav {
+  color: #fff;
+  box-shadow: 0 0 15px #000;
+  font-weight: 700;
+}
+
+.menu-img {
+  width: 2rem;
+}
+
+.top-nav {
+  background-color: #000;
+  display: flex;
+  padding: 1rem;
+}
+
+.title {
+  margin-right: auto;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.1rem;
+}
+
+.bot-nav {
+  background-color: #1d1d1d;
+  display: flex;
+  padding-inline-start: 1rem;
+  padding-inline-end: 3rem;
+}
+
+.weightclass {
+  font-size: 14px;
+  margin-right: auto;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
