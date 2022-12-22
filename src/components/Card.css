@@ -1,0 +1,9 @@
+.all-cards {
+  /* Positioning */
+  display: flex;
+  flex-direction: column;
+  /* Spacing */
+  margin: 2em;
+  padding-bottom: 8em; /*This was added due to the health card being hidden by versebar*/
+  gap: 2em 0;
+}

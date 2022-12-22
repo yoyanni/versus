@@ -1,7 +1,7 @@
 import dropdown from "../assets/dropdown-white.png";
-import "./Versus.css";
+import "./Versebar.css";
 
-export default function Versus() {
+export default function Versebar() {
   return (
     <div className="versus">
       <div className="weightclass-container">

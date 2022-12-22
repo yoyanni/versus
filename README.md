@@ -19,6 +19,30 @@ It will:
 
 Just getting everything setup for starters.
 
-### Add Navbar and Versusbar
+### Add Navbar and Versebar
 
-The Navbar and Versusbar were added according to figma design. There might be some stuff that will need to be tweak later but for now it is serving its purpose. At the moment, everything is hardcoded but that will change once we get the general "shape" of the website. As you can see it will be mobile first and eventually once there is some functionality it will update to accomadate desktops.
+The Navbar and Versebar were added according to figma design. There might be some stuff that will need to be tweak later but for now it is serving its purpose. At the moment, everything is hardcoded but that will change once we get the general "shape" of the website. As you can see it will be mobile first and eventually once there is some functionality it will update to accomadate desktops.
+
+### Add Cards
+
+The cards will be displaying different areas of a fighter and comparing against the opponent.
+
+The types of cards and areas of the fighter are:
+
+- Basic Fighter Information:
+  - Type of Fighter & overall rating of the fighter
+  - Stance
+  - Reach
+- Perks
+- Stand-Up (Anything to do with his striking)
+- Grappling (Anything to do with his wrestling, jiu-jitsu and judo)
+- Health
+  - Health
+  - Stamina
+  - Recovery
+
+Might be able to add everything to one component but for now they are all separate with their own css classes (even though the Stand-Up, Grappling and Health are practically identical).
+
+An issue that I did encounter was that the Health Card was hidden by the Versebar. The Versebar is position: fixed and since that removes it from the normal flow of the document, the Health card hides beneath it. To resolve the issue for now, I have add extra padding on the bottom of the Card component.
+
+There were a few small changes to previously commited files but nothing of significance.

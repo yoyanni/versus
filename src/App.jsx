@@ -1,12 +1,14 @@
 import Navbar from "./components/Navbar";
-import Versus from "./components/Versus";
+import Versebar from "./components/Versebar";
+import Card from "./components/Card";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
       <Navbar />
-      <Versus />
+      <Card />
+      <Versebar />
     </div>
   );
 }

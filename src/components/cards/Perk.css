@@ -1,0 +1,72 @@
+.perk-info {
+  /* Display */
+  background-color: #d9d9d9;
+  box-shadow: 0 0 15px #000a;
+
+  /* Positioning */
+  display: flex;
+  flex-direction: column;
+
+  /* Spacing */
+  padding: 0em 0.5em 0.5em 0.5em;
+}
+
+.title-card {
+  /* Positioning */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* Text */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.red-perks,
+.blue-perks {
+  /* Display */
+  border-bottom: 1px solid #000;
+
+  /* Spacing */
+  padding-inline: 0.5rem;
+
+  /* Text */
+  font-size: 12px;
+}
+
+.perks {
+  /* Positioning */
+  display: flex;
+  justify-content: space-between;
+
+  /* Text */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.red-fighter-perks,
+.blue-fighter-perks {
+  /* Display */
+  display: flex;
+  flex-direction: column;
+}
+
+.red-fighter-perks {
+  align-items: flex-start;
+}
+
+.blue-fighter-perks {
+  align-items: flex-end;
+}
+
+.blue-fighter-perks > span,
+.red-fighter-perks > span {
+  /* Positioning */
+
+  /* Display */
+  border-bottom: 1px solid #000;
+}
