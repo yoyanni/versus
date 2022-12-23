@@ -46,3 +46,8 @@ Might be able to add everything to one component but for now they are all separa
 An issue that I did encounter was that the Health Card was hidden by the Versebar. The Versebar is position: fixed and since that removes it from the normal flow of the document, the Health card hides beneath it. To resolve the issue for now, I have add extra padding on the bottom of the Card component.
 
 There were a few small changes to previously commited files but nothing of significance.
+
+### Add Data
+
+Using google sheets, I was able to create a big array of fighter objects. After a few attempts of trying to import the data I was finally able to and I am now ready to go aheady and some functionality driven by the saved data.
+
