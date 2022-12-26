@@ -7,10 +7,26 @@ import "./Versebar.css";
 import dropdownImg from "../assets/dropdown-white.png";
 
 export default function Versebar(prop) {
-  // At the moment seems like weight is only required in the Versebar
+  const weightClasses = [
+    "Strawwight",
+    "Flyweight (W)",
+    "Bantamweight (W)",
+    "Flyweight",
+    "Bantamweight",
+    "Featherweight",
+    "Lightweight",
+    "Welterweight",
+    "Middleweight",
+    "Light Heavyweight",
+    "Heavyweight",
+  ];
 
   function toggleDropdown(e) {
-    let dropdown = document.getElementById("dropdown-content").style;
+    let id =
+      e.target.className == "weight" ? "dropdown-classes" : "dropdown-fighters";
+    let dropdown = document.getElementById(id).style;
+    // let dropdownFighters = document.getElementById("dropdown-fighters").style;
+    // let dropdownClasses = document.getElementById("dropdown-classes").style;
     dropdown.display == "none"
       ? (dropdown.display = "block")
       : (dropdown.display = "none");
@@ -26,11 +42,18 @@ export default function Versebar(prop) {
     );
   });
 
+  const weightClassList = weightClasses.map((weight) => {
+    return <p key={nanoid()}>{weight.toUpperCase()}</p>;
+  });
+
   return (
     <div className="versus">
-      <div id="dropdown-content">{fighterList}</div>
+      <div id="dropdown-fighters">{fighterList}</div>
+      <div id="dropdown-classes">{weightClassList}</div>
       <div className="weightclass-container">
-        <span className="weight">{prop.weight.toUpperCase()}</span>
+        <span className="weight" onClick={toggleDropdown}>
+          {prop.weight.toUpperCase()}
+        </span>
         <img src={dropdownImg} />
       </div>
       <div className="fighter-container">

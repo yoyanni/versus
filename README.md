@@ -61,3 +61,7 @@ Using google sheets, I was able to create a big array of fighter objects. After 
 ### Create dropdown and populate with data
 
 Dropdown was created. Clicking the Red or Blue fighter (Left or Right) will display a dropdown with the specific weight class fighters. Nanoid was used to add a key for each item, might just add an id to the data sometime later.
+
+### Create weightClass dropdown and populate
+
+This would have been something that could have been done on the previous commit but thats cool.
