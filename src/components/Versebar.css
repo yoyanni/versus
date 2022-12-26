@@ -46,6 +46,22 @@
   align-items: center;
 }
 
+/* Dropdown */
+
+#dropdown-content {
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  max-height: 10em; /*% does not work here for some reason, maybe cause of z-index*/
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  color: #000;
+}
+
+/* End of Dropdown */
+
 img {
   width: 1rem;
 }

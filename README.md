@@ -13,6 +13,13 @@ It will:
 - It will also help with more general facts of the game (e.g. What movements are possible and how to action those)
 - ...
 
+## Things to look into
+
+Just a few things that popped up during the development of this site that I need to look into:
+
+- Versebar since position: fixed/absolute is removed from normal document flow but i still need it to take its size in the viewport so details are not hidden after the fact.
+- max-height was not working with a % value (Versebar)
+
 ### Commit History
 
 #### Initial Commit
@@ -51,3 +58,6 @@ There were a few small changes to previously commited files but nothing of signi
 
 Using google sheets, I was able to create a big array of fighter objects. After a few attempts of trying to import the data I was finally able to and I am now ready to go aheady and some functionality driven by the saved data.
 
+### Create dropdown and populate with data
+
+Dropdown was created. Clicking the Red or Blue fighter (Left or Right) will display a dropdown with the specific weight class fighters. Nanoid was used to add a key for each item, might just add an id to the data sometime later.
