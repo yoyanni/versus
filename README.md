@@ -65,3 +65,7 @@ Dropdown was created. Clicking the Red or Blue fighter (Left or Right) will disp
 ### Create weightClass dropdown and populate
 
 This would have been something that could have been done on the previous commit but thats cool.
+
+### Add id to data
+
+Should have added this previously, ran into a problem where I needed the ids to select the correct fighter in the whole data set instead the filtered weightclass set (since .filter returns a new array and new indices)

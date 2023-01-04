@@ -1,5 +1,6 @@
 const ufcRoster = [
   {
+    id: "1",
     weightClass: "Strawweight",
     firstName: "Jéssica",
     nickname: "Bate Estaca",
@@ -132,6 +133,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "2",
     weightClass: "Strawweight",
     firstName: "Joanne",
     nickname: "JoJo",
@@ -276,6 +278,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "3",
     weightClass: "Strawweight",
     firstName: "Cynthia",
     nickname: "",
@@ -412,6 +415,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "4",
     weightClass: "Strawweight",
     firstName: "Mackenzie",
     nickname: "",
@@ -545,6 +549,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "5",
     weightClass: "Strawweight",
     firstName: "Carla",
     nickname: "Cookie Monster",
@@ -677,6 +682,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "6",
     weightClass: "Strawweight",
     firstName: "Cláudia",
     nickname: "Claudinha",
@@ -818,6 +824,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "7",
     weightClass: "Strawweight",
     firstName: "Alexa",
     nickname: "",
@@ -966,6 +973,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "8",
     weightClass: "Strawweight",
     firstName: "Felice",
     nickname: "Lil Bulldog",
@@ -1109,6 +1117,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "9",
     weightClass: "Strawweight",
     firstName: "Angela",
     nickname: "Overkill",
@@ -1253,6 +1262,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "10",
     weightClass: "Strawweight",
     firstName: "Joanna",
     nickname: "",
@@ -1397,6 +1407,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "11",
     weightClass: "Strawweight",
     firstName: "Karolina",
     nickname: "",
@@ -1536,6 +1547,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "12",
     weightClass: "Strawweight",
     firstName: "Randa",
     nickname: "Quiet Storm",
@@ -1671,6 +1683,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "13",
     weightClass: "Strawweight",
     firstName: "Maryna",
     nickname: "Iron Lady",
@@ -1806,6 +1819,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "14",
     weightClass: "Strawweight",
     firstName: "Rose",
     nickname: "Thug",
@@ -1945,6 +1959,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "15",
     weightClass: "Strawweight",
     firstName: "Jessica",
     nickname: "",
@@ -2079,6 +2094,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "16",
     weightClass: "Strawweight",
     firstName: "Tatiana",
     nickname: "",
@@ -2211,6 +2227,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "17",
     weightClass: "Strawweight",
     firstName: "Tecia",
     nickname: "Tiny Tornado",
@@ -2348,6 +2365,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "18",
     weightClass: "Strawweight",
     firstName: "Paige",
     nickname: "12 Gauge",
@@ -2489,6 +2507,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "19",
     weightClass: "Strawweight",
     firstName: "Michelle",
     nickname: "The Karate Hottie",
@@ -2626,6 +2645,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "20",
     weightClass: "Strawweight",
     firstName: "Weili",
     nickname: "Magnum",
@@ -2767,6 +2787,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "21",
     weightClass: "Flyweight (W)",
     firstName: "Jéssica",
     nickname: "Bate Estaca",
@@ -2899,6 +2920,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "22",
     weightClass: "Flyweight (W)",
     firstName: "Viviane",
     nickname: "Vivi",
@@ -3042,6 +3064,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "23",
     weightClass: "Flyweight (W)",
     firstName: "Joanne",
     nickname: "JoJo",
@@ -3186,6 +3209,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "24",
     weightClass: "Flyweight (W)",
     firstName: "Cynthia",
     nickname: "",
@@ -3322,6 +3346,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "25",
     weightClass: "Flyweight (W)",
     firstName: "Katlyn",
     nickname: "Blonde Fighter",
@@ -3471,6 +3496,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "26",
     weightClass: "Flyweight (W)",
     firstName: "Alexis",
     nickname: "",
@@ -3606,6 +3632,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "27",
     weightClass: "Flyweight (W)",
     firstName: "Ashlee",
     nickname: "Rebel Girl",
@@ -3738,6 +3765,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "28",
     weightClass: "Flyweight (W)",
     firstName: "Jessica",
     nickname: "Evil",
@@ -3870,6 +3898,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "29",
     weightClass: "Flyweight (W)",
     firstName: "Alexa",
     nickname: "",
@@ -4018,6 +4047,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "30",
     weightClass: "Flyweight (W)",
     firstName: "Joanna",
     nickname: "",
@@ -4162,6 +4192,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "31",
     weightClass: "Flyweight (W)",
     firstName: "Jennifer",
     nickname: "",
@@ -4297,6 +4328,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "32",
     weightClass: "Flyweight (W)",
     firstName: "Maryna",
     nickname: "Iron Lady",
@@ -4432,6 +4464,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "33",
     weightClass: "Flyweight (W)",
     firstName: "Lauren",
     nickname: "Lucky",
@@ -4564,6 +4597,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "34",
     weightClass: "Flyweight (W)",
     firstName: "Valentina",
     nickname: "Bullet",
@@ -4723,6 +4757,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "35",
     weightClass: "Flyweight (W)",
     firstName: "Paige",
     nickname: "12 Gauge",
@@ -4864,6 +4899,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "36",
     weightClass: "Bantamweight (W)",
     firstName: "Megan",
     nickname: "",
@@ -5002,6 +5038,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "37",
     weightClass: "Bantamweight (W)",
     firstName: "Jéssica",
     nickname: "",
@@ -5134,6 +5171,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "38",
     weightClass: "Bantamweight (W)",
     firstName: "Bethe",
     nickname: "",
@@ -5268,6 +5306,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "39",
     weightClass: "Bantamweight (W)",
     firstName: "Cris",
     nickname: "",
@@ -5411,6 +5450,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "40",
     weightClass: "Bantamweight (W)",
     firstName: "Alexis",
     nickname: "",
@@ -5546,6 +5586,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "41",
     weightClass: "Bantamweight (W)",
     firstName: "Germaine",
     nickname: "",
@@ -5684,6 +5725,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "42",
     weightClass: "Bantamweight (W)",
     firstName: "Ashlee",
     nickname: "",
@@ -5816,6 +5858,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "43",
     weightClass: "Bantamweight (W)",
     firstName: "Jessica",
     nickname: "",
@@ -5948,6 +5991,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "44",
     weightClass: "Bantamweight (W)",
     firstName: "Holly",
     nickname: "",
@@ -6096,6 +6140,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "45",
     weightClass: "Bantamweight (W)",
     firstName: "Aspen",
     nickname: "",
@@ -6228,6 +6273,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "46",
     weightClass: "Bantamweight (W)",
     firstName: "Sara",
     nickname: "",
@@ -6362,6 +6408,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "47",
     weightClass: "Bantamweight (W)",
     firstName: "Lauren",
     nickname: "Lucky",
@@ -6494,6 +6541,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "48",
     weightClass: "Bantamweight (W)",
     firstName: "Amanda",
     nickname: "The Lioness",
@@ -6639,6 +6687,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "49",
     weightClass: "Bantamweight (W)",
     firstName: "Raquel",
     nickname: "Rocky",
@@ -6773,6 +6822,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "50",
     weightClass: "Bantamweight (W)",
     firstName: "Julianna",
     nickname: "The Venezuelan Vixen",
@@ -6902,6 +6952,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "51",
     weightClass: "Bantamweight (W)",
     firstName: "Marion",
     nickname: "The Belizean Bruiser",
@@ -7040,6 +7091,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "52",
     weightClass: "Bantamweight (W)",
     firstName: "Ronda",
     nickname: "Rowdy",
@@ -7173,6 +7225,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "53",
     weightClass: "Bantamweight (W)",
     firstName: "Valentina",
     nickname: "Bullet",
@@ -7330,6 +7383,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "54",
     weightClass: "Bantamweight (W)",
     firstName: "Miesha",
     nickname: "Cupcake",
@@ -7466,6 +7520,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "55",
     weightClass: "Bantamweight (W)",
     firstName: "Ketlen",
     nickname: "Fenomeno",
@@ -7603,6 +7658,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "56",
     weightClass: "Flyweight",
     firstName: "Askar",
     nickname: "Bullet",
@@ -7751,6 +7807,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "57",
     weightClass: "Flyweight",
     firstName: "Joseph",
     nickname: "",
@@ -7897,6 +7954,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "58",
     weightClass: "Flyweight",
     firstName: "Ray",
     nickname: "The Tazmexican Devil",
@@ -8036,6 +8094,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "59",
     weightClass: "Flyweight",
     firstName: "Henry",
     nickname: "The Messenger",
@@ -8179,6 +8238,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "60",
     weightClass: "Flyweight",
     firstName: "TJ",
     nickname: "",
@@ -8327,6 +8387,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "61",
     weightClass: "Flyweight",
     firstName: "John",
     nickname: "The Magician",
@@ -8474,6 +8535,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "62",
     weightClass: "Flyweight",
     firstName: "Tim",
     nickname: "",
@@ -8626,6 +8688,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "63",
     weightClass: "Flyweight",
     firstName: "Deiveson",
     nickname: "Deus da Guerra",
@@ -8772,6 +8835,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "64",
     weightClass: "Flyweight",
     firstName: "Jussier",
     nickname: "",
@@ -8918,6 +8982,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "65",
     weightClass: "Flyweight",
     firstName: "Demetrious",
     nickname: "Mighty Mouse",
@@ -9064,6 +9129,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "66",
     weightClass: "Flyweight",
     firstName: "Brandon",
     nickname: "The Assassin Baby",
@@ -9207,6 +9273,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "67",
     weightClass: "Flyweight",
     firstName: "Alexandre",
     nickname: "The Cannibal",
@@ -9346,6 +9413,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "68",
     weightClass: "Flyweight",
     firstName: "Alex",
     nickname: "",
@@ -9489,6 +9557,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "69",
     weightClass: "Flyweight",
     firstName: "Louis",
     nickname: "Da Last Samurai",
@@ -9638,6 +9707,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "70",
     weightClass: "Bantamweight",
     firstName: "Iuri",
     nickname: "Marajo",
@@ -9778,6 +9848,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "71",
     weightClass: "Bantamweight",
     firstName: "Jose",
     nickname: "",
@@ -9933,6 +10004,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "72",
     weightClass: "Bantamweight",
     firstName: "Thomas",
     nickname: "Thominhas",
@@ -10076,6 +10148,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "73",
     weightClass: "Bantamweight",
     firstName: "Raphael",
     nickname: "",
@@ -10221,6 +10294,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "74",
     weightClass: "Bantamweight",
     firstName: "Renan",
     nickname: "The Baron",
@@ -10364,6 +10438,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "75",
     weightClass: "Bantamweight",
     firstName: "Ray",
     nickname: "The Tazmexican Devil",
@@ -10503,6 +10578,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "76",
     weightClass: "Bantamweight",
     firstName: "Henry",
     nickname: "The Messenger",
@@ -10646,6 +10722,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "77",
     weightClass: "Bantamweight",
     firstName: "Dominick",
     nickname: "The Dominator",
@@ -10793,6 +10870,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "78",
     weightClass: "Bantamweight",
     firstName: "TJ",
     nickname: "",
@@ -10941,6 +11019,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "79",
     weightClass: "Bantamweight",
     firstName: "John",
     nickname: "The Magician",
@@ -11088,6 +11167,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "80",
     weightClass: "Bantamweight",
     firstName: "Frankie",
     nickname: "The Answer",
@@ -11237,6 +11317,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "81",
     weightClass: "Bantamweight",
     firstName: "Johnny",
     nickname: "",
@@ -11378,6 +11459,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "82",
     weightClass: "Bantamweight",
     firstName: "Tim",
     nickname: "",
@@ -11530,6 +11612,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "83",
     weightClass: "Bantamweight",
     firstName: "Urijah",
     nickname: "The California Kid",
@@ -11673,6 +11756,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "84",
     weightClass: "Bantamweight",
     firstName: "Rob",
     nickname: "",
@@ -11828,6 +11912,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "85",
     weightClass: "Bantamweight",
     firstName: "Cody",
     nickname: "No Love",
@@ -11972,6 +12057,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "86",
     weightClass: "Bantamweight",
     firstName: "Bruce",
     nickname: "The Dragon",
@@ -12134,6 +12220,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "87",
     weightClass: "Bantamweight",
     firstName: "John",
     nickname: "Hands of Stone",
@@ -12267,6 +12354,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "88",
     weightClass: "Bantamweight",
     firstName: "Marlon",
     nickname: "Magic",
@@ -12421,6 +12509,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "89",
     weightClass: "Bantamweight",
     firstName: "Pedro",
     nickname: "The Young Punisher",
@@ -12573,6 +12662,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "90",
     weightClass: "Bantamweight",
     firstName: "Sean",
     nickname: "Sugar",
@@ -12732,6 +12822,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "91",
     weightClass: "Bantamweight",
     firstName: "Jimmie",
     nickname: "El Terror",
@@ -12878,6 +12969,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "92",
     weightClass: "Bantamweight",
     firstName: "Frankie",
     nickname: "",
@@ -13010,6 +13102,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "93",
     weightClass: "Bantamweight",
     firstName: "Cory",
     nickname: "",
@@ -13163,6 +13256,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "94",
     weightClass: "Bantamweight",
     firstName: "Louis",
     nickname: "Da Last Samurai",
@@ -13312,6 +13406,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "95",
     weightClass: "Bantamweight",
     firstName: "Aljamain",
     nickname: "Funk Master",
@@ -13481,6 +13576,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "96",
     weightClass: "Bantamweight",
     firstName: "Eddie",
     nickname: "",
@@ -13613,6 +13709,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "97",
     weightClass: "Bantamweight",
     firstName: "Song",
     nickname: "Kung Fu Monkey",
@@ -13751,6 +13848,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "98",
     weightClass: "Bantamweight",
     firstName: "Petr",
     nickname: "No Mercy",
@@ -13898,6 +13996,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "99",
     weightClass: "Featherweight",
     firstName: "Jose",
     nickname: "",
@@ -14053,6 +14152,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "100",
     weightClass: "Featherweight",
     firstName: "Arnold",
     nickname: "Almighty",
@@ -14201,6 +14301,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "101",
     weightClass: "Featherweight",
     firstName: "Makwan",
     nickname: "Mr. Finland",
@@ -14340,6 +14441,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "102",
     weightClass: "Featherweight",
     firstName: "Raphael",
     nickname: "",
@@ -14485,6 +14587,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "103",
     weightClass: "Featherweight",
     firstName: "Edson",
     nickname: "Junior",
@@ -14634,6 +14737,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "104",
     weightClass: "Featherweight",
     firstName: "Mirsad",
     nickname: "",
@@ -14763,6 +14867,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "105",
     weightClass: "Featherweight",
     firstName: "Alex",
     nickname: "Bruce Leeroy",
@@ -14911,6 +15016,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "106",
     weightClass: "Featherweight",
     firstName: "Dooho",
     nickname: "The Korean Superboy",
@@ -15043,6 +15149,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "107",
     weightClass: "Featherweight",
     firstName: "Frankie",
     nickname: "The Answer",
@@ -15192,6 +15299,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "108",
     weightClass: "Featherweight",
     firstName: "Darren",
     nickname: "The Damage",
@@ -15325,6 +15433,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "109",
     weightClass: "Featherweight",
     firstName: "Josh",
     nickname: "",
@@ -15463,6 +15572,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "110",
     weightClass: "Featherweight",
     firstName: "Urijah",
     nickname: "The California Kid",
@@ -15606,6 +15716,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "111",
     weightClass: "Featherweight",
     firstName: "Clay",
     nickname: "The Carpenter",
@@ -15740,6 +15851,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "112",
     weightClass: "Featherweight",
     firstName: "Max",
     nickname: "Blessed",
@@ -15893,6 +16005,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "113",
     weightClass: "Featherweight",
     firstName: "Daniel",
     nickname: "The Hangman",
@@ -16038,6 +16151,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "114",
     weightClass: "Featherweight",
     firstName: "Dan",
     nickname: "50K",
@@ -16188,6 +16302,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "115",
     weightClass: "Featherweight",
     firstName: "Michael",
     nickname: "The Menace",
@@ -16321,6 +16436,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "116",
     weightClass: "Featherweight",
     firstName: "Chan Sung",
     nickname: "The Korean Zombie",
@@ -16469,6 +16585,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "117",
     weightClass: "Featherweight",
     firstName: "Calvin",
     nickname: "",
@@ -16611,6 +16728,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "118",
     weightClass: "Featherweight",
     firstName: "Ricardo",
     nickname: "The Bully",
@@ -16760,6 +16878,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "119",
     weightClass: "Featherweight",
     firstName: "Bruce",
     nickname: "The Dragon",
@@ -16916,6 +17035,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "120",
     weightClass: "Featherweight",
     firstName: "Zabit",
     nickname: "",
@@ -17086,6 +17206,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "121",
     weightClass: "Featherweight",
     firstName: "Conor",
     nickname: "The Notorious",
@@ -17241,6 +17362,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "122",
     weightClass: "Featherweight",
     firstName: "Conor",
     nickname: "The Notorious",
@@ -17396,6 +17518,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "123",
     weightClass: "Featherweight",
     firstName: "Renato",
     nickname: "Jucao",
@@ -17538,6 +17661,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "124",
     weightClass: "Featherweight",
     firstName: "Charles",
     nickname: "Do Bronx",
@@ -17700,6 +17824,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "125",
     weightClass: "Featherweight",
     firstName: "Brian",
     nickname: "T-City",
@@ -17848,6 +17973,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "126",
     weightClass: "Featherweight",
     firstName: "Anthony",
     nickname: "Showtime",
@@ -18008,6 +18134,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "127",
     weightClass: "Featherweight",
     firstName: "Dustin",
     nickname: "The Diamond",
@@ -18157,6 +18284,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "128",
     weightClass: "Featherweight",
     firstName: "Yair",
     nickname: "El Pantera",
@@ -18318,6 +18446,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "129",
     weightClass: "Featherweight",
     firstName: "Charles",
     nickname: "Bostone Strong",
@@ -18454,6 +18583,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "130",
     weightClass: "Featherweight",
     firstName: "Jeremy",
     nickname: "Lil' Heathen",
@@ -18594,6 +18724,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "131",
     weightClass: "Featherweight",
     firstName: "Cub",
     nickname: "",
@@ -18739,6 +18870,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "132",
     weightClass: "Featherweight",
     firstName: "Diego",
     nickname: "Nightmare",
@@ -18879,6 +19011,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "133",
     weightClass: "Featherweight",
     firstName: "Alexander",
     nickname: "The Great",
@@ -19027,6 +19160,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "134",
     weightClass: "Featherweight",
     firstName: "Sodiq",
     nickname: "Super",
@@ -19161,6 +19295,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "135",
     weightClass: "Lightweight",
     firstName: "Eddie",
     nickname: "The Underground King",
@@ -19301,6 +19436,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "136",
     weightClass: "Lightweight",
     firstName: "Edson",
     nickname: "Junior",
@@ -19450,6 +19586,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "137",
     weightClass: "Lightweight",
     firstName: "Gilbert",
     nickname: "Durinho",
@@ -19590,6 +19727,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "138",
     weightClass: "Lightweight",
     firstName: "Donald",
     nickname: "Cowboy",
@@ -19740,6 +19878,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "139",
     weightClass: "Lightweight",
     firstName: "Michael",
     nickname: "Iron",
@@ -19881,6 +20020,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "140",
     weightClass: "Lightweight",
     firstName: "Michael",
     nickname: "Maverick",
@@ -20021,6 +20161,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "141",
     weightClass: "Lightweight",
     firstName: "Beneil",
     nickname: "Benny",
@@ -20165,6 +20306,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "142",
     weightClass: "Lightweight",
     firstName: "Marc",
     nickname: "Bonecrusher",
@@ -20314,6 +20456,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "143",
     weightClass: "Lightweight",
     firstName: "Nate",
     nickname: "",
@@ -20455,6 +20598,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "144",
     weightClass: "Lightweight",
     firstName: "Rafael",
     nickname: "Dos",
@@ -20602,6 +20746,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "145",
     weightClass: "Lightweight",
     firstName: "Joe",
     nickname: "Irish Joe",
@@ -20736,6 +20881,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "146",
     weightClass: "Lightweight",
     firstName: "Evan",
     nickname: "",
@@ -20873,6 +21019,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "147",
     weightClass: "Lightweight",
     firstName: "Frankie",
     nickname: "The Answer",
@@ -21022,6 +21169,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "148",
     weightClass: "Lightweight",
     firstName: "Josh",
     nickname: "",
@@ -21160,6 +21308,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "149",
     weightClass: "Lightweight",
     firstName: "Paul",
     nickname: "The Irish Dragon",
@@ -21313,6 +21462,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "150",
     weightClass: "Lightweight",
     firstName: "Tony",
     nickname: "El Cucui",
@@ -21475,6 +21625,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "151",
     weightClass: "Lightweight",
     firstName: "Justin",
     nickname: "The Highlight",
@@ -21621,6 +21772,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "152",
     weightClass: "Lightweight",
     firstName: "Bobby",
     nickname: "King",
@@ -21758,6 +21910,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "153",
     weightClass: "Lightweight",
     firstName: "Clay",
     nickname: "The Carpenter",
@@ -21892,6 +22045,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "154",
     weightClass: "Lightweight",
     firstName: "Alexander",
     nickname: "The Great",
@@ -22026,6 +22180,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "155",
     weightClass: "Lightweight",
     firstName: "Max",
     nickname: "Blessed",
@@ -22179,6 +22334,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "156",
     weightClass: "Lightweight",
     firstName: "Daniel",
     nickname: "The Hangman",
@@ -22324,6 +22480,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "157",
     weightClass: "Lightweight",
     firstName: "Al",
     nickname: "Raging",
@@ -22469,6 +22626,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "158",
     weightClass: "Lightweight",
     firstName: "Michael",
     nickname: "The Menace",
@@ -22602,6 +22760,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "159",
     weightClass: "Lightweight",
     firstName: "Rustam",
     nickname: "Tiger",
@@ -22735,6 +22894,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "160",
     weightClass: "Lightweight",
     firstName: "Joe",
     nickname: "",
@@ -22867,6 +23027,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "161",
     weightClass: "Lightweight",
     firstName: "Bruce",
     nickname: "The Dragon",
@@ -23023,6 +23184,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "162",
     weightClass: "Lightweight",
     firstName: "Kevin",
     nickname: "The Motown Phenom",
@@ -23164,6 +23326,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "163",
     weightClass: "Lightweight",
     firstName: "Nik",
     nickname: "The Carny",
@@ -23294,6 +23457,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "164",
     weightClass: "Lightweight",
     firstName: "Jorge",
     nickname: "Gamebred",
@@ -23445,6 +23609,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "165",
     weightClass: "Lightweight",
     firstName: "Jake",
     nickname: "The Celtic Kid",
@@ -23578,6 +23743,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "166",
     weightClass: "Lightweight",
     firstName: "Conor",
     nickname: "The Notorious",
@@ -23733,6 +23899,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "167",
     weightClass: "Lightweight",
     firstName: "Yancy",
     nickname: "",
@@ -23874,6 +24041,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "168",
     weightClass: "Lightweight",
     firstName: "Jim",
     nickname: "A10",
@@ -24010,6 +24178,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "169",
     weightClass: "Lightweight",
     firstName: "Renato",
     nickname: "Jucao",
@@ -24152,6 +24321,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "170",
     weightClass: "Lightweight",
     firstName: "Khabib",
     nickname: "The Eagle",
@@ -24290,6 +24460,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "171",
     weightClass: "Lightweight",
     firstName: "Alex",
     nickname: "Cowboy",
@@ -24429,6 +24600,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "172",
     weightClass: "Lightweight",
     firstName: "Charles",
     nickname: "Do Bronx",
@@ -24591,6 +24763,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "173",
     weightClass: "Lightweight",
     firstName: "Bj",
     nickname: "The Prodigy",
@@ -24726,6 +24899,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "174",
     weightClass: "Lightweight",
     firstName: "Anthony",
     nickname: "Showtime",
@@ -24886,6 +25060,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "175",
     weightClass: "Lightweight",
     firstName: "Dustin",
     nickname: "The Diamond",
@@ -25035,6 +25210,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "176",
     weightClass: "Lightweight",
     firstName: "Leonardo",
     nickname: "",
@@ -25170,6 +25346,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "177",
     weightClass: "Lightweight",
     firstName: "Jeremy",
     nickname: "Lil' Heathen",
@@ -25310,6 +25487,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "178",
     weightClass: "Lightweight",
     firstName: "Diego",
     nickname: "Nightmare",
@@ -25450,6 +25628,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "179",
     weightClass: "Lightweight",
     firstName: "James",
     nickname: "The Texecutioner",
@@ -25596,6 +25775,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "180",
     weightClass: "Lightweight",
     firstName: "Alexander",
     nickname: "The Great",
@@ -25744,6 +25924,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "181",
     weightClass: "Welterweight",
     firstName: "Omari",
     nickname: "Wolverine",
@@ -25876,6 +26057,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "182",
     weightClass: "Welterweight",
     firstName: "Ben",
     nickname: "Funky",
@@ -26005,6 +26187,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "183",
     weightClass: "Welterweight",
     firstName: "Tom",
     nickname: "",
@@ -26138,6 +26321,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "184",
     weightClass: "Welterweight",
     firstName: "Matt",
     nickname: "The Immortal",
@@ -26278,6 +26462,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "185",
     weightClass: "Welterweight",
     firstName: "Gilbert",
     nickname: "Durinho",
@@ -26419,6 +26604,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "186",
     weightClass: "Welterweight",
     firstName: "Donald",
     nickname: "Cowboy",
@@ -26569,6 +26755,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "187",
     weightClass: "Welterweight",
     firstName: "Michael",
     nickname: "Maverick",
@@ -26709,6 +26896,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "188",
     weightClass: "Welterweight",
     firstName: "Khamzat",
     nickname: "Borz",
@@ -26846,6 +27034,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "189",
     weightClass: "Welterweight",
     firstName: "Carlos",
     nickname: "The Natural Born Killer",
@@ -27003,6 +27192,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "190",
     weightClass: "Welterweight",
     firstName: "Colby",
     nickname: "Chaos",
@@ -27153,6 +27343,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "191",
     weightClass: "Welterweight",
     firstName: "Nate",
     nickname: "",
@@ -27294,6 +27485,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "192",
     weightClass: "Welterweight",
     firstName: "Nick",
     nickname: "",
@@ -27439,6 +27631,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "193",
     weightClass: "Welterweight",
     firstName: "Rafael",
     nickname: "",
@@ -27586,6 +27779,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "194",
     weightClass: "Welterweight",
     firstName: "Leon",
     nickname: "Rocky",
@@ -27729,6 +27923,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "195",
     weightClass: "Welterweight",
     firstName: "Paul",
     nickname: "The Irish Dragon",
@@ -27882,6 +28077,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "196",
     weightClass: "Welterweight",
     firstName: "Tony",
     nickname: "El Cucui",
@@ -28042,6 +28238,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "197",
     weightClass: "Welterweight",
     firstName: "Mickey",
     nickname: "",
@@ -28172,6 +28369,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "198",
     weightClass: "Welterweight",
     firstName: "Kelvin",
     nickname: "",
@@ -28314,6 +28512,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "199",
     weightClass: "Welterweight",
     firstName: "Royce",
     nickname: "",
@@ -28448,6 +28647,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "200",
     weightClass: "Welterweight",
     firstName: "Johny",
     nickname: "Bigg Rigg",
@@ -28579,6 +28779,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "201",
     weightClass: "Welterweight",
     firstName: "Matt",
     nickname: "",
@@ -28709,6 +28910,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "202",
     weightClass: "Welterweight",
     firstName: "Li",
     nickname: "The Leech",
@@ -28843,6 +29045,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "203",
     weightClass: "Welterweight",
     firstName: "Alan",
     nickname: "Brahma",
@@ -28982,6 +29185,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "204",
     weightClass: "Welterweight",
     firstName: "Robbie",
     nickname: "Ruthless",
@@ -29125,6 +29329,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "205",
     weightClass: "Welterweight",
     firstName: "Bruce",
     nickname: "The Dragon",
@@ -29281,6 +29486,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "206",
     weightClass: "Welterweight",
     firstName: "Kevin",
     nickname: "The Motown Phenom",
@@ -29422,6 +29628,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "207",
     weightClass: "Welterweight",
     firstName: "Vicente",
     nickname: "The Silent Assassin",
@@ -29572,6 +29779,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "208",
     weightClass: "Welterweight",
     firstName: "Neil",
     nickname: "",
@@ -29715,6 +29923,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "209",
     weightClass: "Welterweight",
     firstName: "Demian",
     nickname: "",
@@ -29854,6 +30063,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "210",
     weightClass: "Welterweight",
     firstName: "Jorge",
     nickname: "Gamebred",
@@ -30005,6 +30215,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "211",
     weightClass: "Welterweight",
     firstName: "Jake",
     nickname: "The Celtic Kid",
@@ -30138,6 +30349,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "212",
     weightClass: "Welterweight",
     firstName: "Conor",
     nickname: "The Notorious",
@@ -30293,6 +30505,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "213",
     weightClass: "Welterweight",
     firstName: "Tim",
     nickname: "The Dirty Bird",
@@ -30440,6 +30653,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "214",
     weightClass: "Welterweight",
     firstName: "Yancy",
     nickname: "",
@@ -30581,6 +30795,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "215",
     weightClass: "Welterweight",
     firstName: "Gunnar",
     nickname: "Gunni",
@@ -30718,6 +30933,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "216",
     weightClass: "Welterweight",
     firstName: "Alex",
     nickname: "Cowboy",
@@ -30857,6 +31073,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "217",
     weightClass: "Welterweight",
     firstName: "Bj",
     nickname: "The Prodigy",
@@ -30992,6 +31209,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "218",
     weightClass: "Welterweight",
     firstName: "Mike",
     nickname: "Platinum",
@@ -31130,6 +31348,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "219",
     weightClass: "Welterweight",
     firstName: "Anthony",
     nickname: "Showtime",
@@ -31290,6 +31509,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "220",
     weightClass: "Welterweight",
     firstName: "Santiago",
     nickname: "Gente Boa",
@@ -31422,6 +31642,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "221",
     weightClass: "Welterweight",
     firstName: "CM",
     nickname: "",
@@ -31551,6 +31772,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "222",
     weightClass: "Welterweight",
     firstName: "Erick",
     nickname: "The Tiger",
@@ -31689,6 +31911,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "223",
     weightClass: "Welterweight",
     firstName: "George",
     nickname: "Rush",
@@ -31842,6 +32065,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "224",
     weightClass: "Welterweight",
     firstName: "Diego",
     nickname: "Nightmare",
@@ -31982,6 +32206,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "225",
     weightClass: "Welterweight",
     firstName: "Stephen",
     nickname: "Wonderboy",
@@ -32133,6 +32358,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "226",
     weightClass: "Welterweight",
     firstName: "Darren",
     nickname: "The Gorilla",
@@ -32277,6 +32503,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "227",
     weightClass: "Welterweight",
     firstName: "Kamaru",
     nickname: "Nigerian Nightmare",
@@ -32418,6 +32645,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "228",
     weightClass: "Welterweight",
     firstName: "James",
     nickname: "The Texecutioner",
@@ -32564,6 +32792,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "229",
     weightClass: "Welterweight",
     firstName: "Dana",
     nickname: "",
@@ -32701,6 +32930,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "230",
     weightClass: "Welterweight",
     firstName: "Tyron",
     nickname: "The Chosen One",
@@ -32844,6 +33074,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "231",
     weightClass: "Middleweight",
     firstName: "Israel",
     nickname: "The Last Stylebender",
@@ -33005,6 +33236,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "232",
     weightClass: "Middleweight",
     firstName: "Omari",
     nickname: "Wolverine",
@@ -33137,6 +33369,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "233",
     weightClass: "Middleweight",
     firstName: "Sam",
     nickname: "Smile'N",
@@ -33270,6 +33503,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "234",
     weightClass: "Middleweight",
     firstName: "Vitor",
     nickname: "The Phenom",
@@ -33403,6 +33637,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "235",
     weightClass: "Middleweight",
     firstName: "Michael",
     nickname: "The Count",
@@ -33551,6 +33786,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "236",
     weightClass: "Middleweight",
     firstName: "Tom",
     nickname: "",
@@ -33684,6 +33920,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "237",
     weightClass: "Middleweight",
     firstName: "Derek",
     nickname: "",
@@ -33821,6 +34058,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "238",
     weightClass: "Middleweight",
     firstName: "Bruce",
     nickname: "It's Time",
@@ -33963,6 +34201,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "239",
     weightClass: "Middleweight",
     firstName: "Jared",
     nickname: "The Killa Gorilla",
@@ -34098,6 +34337,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "240",
     weightClass: "Middleweight",
     firstName: "Khamzat",
     nickname: "Borz",
@@ -34235,6 +34475,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "241",
     weightClass: "Middleweight",
     firstName: "Paulo",
     nickname: "The Eraser",
@@ -34374,6 +34615,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "242",
     weightClass: "Middleweight",
     firstName: "Nick",
     nickname: "",
@@ -34519,6 +34761,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "243",
     weightClass: "Middleweight",
     firstName: "Kelvin",
     nickname: "",
@@ -34661,6 +34904,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "244",
     weightClass: "Middleweight",
     firstName: "Royce",
     nickname: "",
@@ -34795,6 +35039,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "245",
     weightClass: "Middleweight",
     firstName: "Uriah",
     nickname: "Prime Time",
@@ -34954,6 +35199,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "246",
     weightClass: "Middleweight",
     firstName: "Dan",
     nickname: "Hendo",
@@ -35089,6 +35335,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "247",
     weightClass: "Middleweight",
     firstName: "Jack",
     nickname: "The Joker",
@@ -35228,6 +35475,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "248",
     weightClass: "Middleweight",
     firstName: "Kevin",
     nickname: "Trailblazer",
@@ -35389,6 +35637,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "249",
     weightClass: "Middleweight",
     firstName: "Krzysztof",
     nickname: "",
@@ -35532,6 +35781,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "250",
     weightClass: "Middleweight",
     firstName: "Robbie",
     nickname: "Ruthless",
@@ -35675,6 +35925,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "251",
     weightClass: "Middleweight",
     firstName: "Lyoto",
     nickname: "The Dragon",
@@ -35828,6 +36079,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "252",
     weightClass: "Middleweight",
     firstName: "Demian",
     nickname: "",
@@ -35967,6 +36219,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "253",
     weightClass: "Middleweight",
     firstName: "Luke",
     nickname: "",
@@ -36112,6 +36365,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "254",
     weightClass: "Middleweight",
     firstName: "Yoel",
     nickname: "Soldier of God",
@@ -36267,6 +36521,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "255",
     weightClass: "Middleweight",
     firstName: "Thiago",
     nickname: "Marreta",
@@ -36423,6 +36678,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "256",
     weightClass: "Middleweight",
     firstName: "Edmen",
     nickname: "The Golden Boy",
@@ -36560,6 +36816,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "257",
     weightClass: "Middleweight",
     firstName: "Anderson",
     nickname: "The Spider",
@@ -36709,6 +36966,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "258",
     weightClass: "Middleweight",
     firstName: "Wanderlei",
     nickname: "The Axe Murderer",
@@ -36843,6 +37101,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "259",
     weightClass: "Middleweight",
     firstName: "Anthony",
     nickname: "Lionheart",
@@ -36988,6 +37247,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "260",
     weightClass: "Middleweight",
     firstName: "Chael",
     nickname: "The American Gangster",
@@ -37121,6 +37381,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "261",
     weightClass: "Middleweight",
     firstName: "Ronaldo",
     nickname: "Jacaré",
@@ -37258,6 +37519,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "262",
     weightClass: "Middleweight",
     firstName: "George",
     nickname: "Rush",
@@ -37411,6 +37673,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "263",
     weightClass: "Middleweight",
     firstName: "Brad",
     nickname: "",
@@ -37546,6 +37809,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "264",
     weightClass: "Middleweight",
     firstName: "Darren",
     nickname: "The Gorilla",
@@ -37690,6 +37954,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "265",
     weightClass: "Middleweight",
     firstName: "Marvin",
     nickname: "The Italian Dream",
@@ -37831,6 +38096,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "266",
     weightClass: "Middleweight",
     firstName: "Chris",
     nickname: "The All-American",
@@ -37980,6 +38246,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "267",
     weightClass: "Middleweight",
     firstName: "Dana",
     nickname: "",
@@ -38117,6 +38384,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "268",
     weightClass: "Middleweight",
     firstName: "Robert",
     nickname: "The Reaper",
@@ -38266,6 +38534,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "269",
     weightClass: "Light Heavyweight",
     firstName: "Israel",
     nickname: "The Last Stylebender",
@@ -38427,6 +38696,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "270",
     weightClass: "Light Heavyweight",
     firstName: "Sam",
     nickname: "Smile'N",
@@ -38560,6 +38830,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "271",
     weightClass: "Light Heavyweight",
     firstName: "Corey",
     nickname: "Overtime",
@@ -38692,6 +38963,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "272",
     weightClass: "Light Heavyweight",
     firstName: "Vitor",
     nickname: "The Phenom",
@@ -38825,6 +39097,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "273",
     weightClass: "Light Heavyweight",
     firstName: "Jan",
     nickname: "",
@@ -38970,6 +39243,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "274",
     weightClass: "Light Heavyweight",
     firstName: "Jared",
     nickname: "The Killa Gorilla",
@@ -39105,6 +39379,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "275",
     weightClass: "Light Heavyweight",
     firstName: "Misha",
     nickname: "",
@@ -39247,6 +39522,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "276",
     weightClass: "Light Heavyweight",
     firstName: "Daniel",
     nickname: "DC",
@@ -39390,6 +39666,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "277",
     weightClass: "Light Heavyweight",
     firstName: "Rashad",
     nickname: "Suga",
@@ -39519,6 +39796,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "278",
     weightClass: "Light Heavyweight",
     firstName: "Forest",
     nickname: "",
@@ -39653,6 +39931,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "279",
     weightClass: "Light Heavyweight",
     firstName: "Alexander",
     nickname: "The Mauler",
@@ -39803,6 +40082,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "280",
     weightClass: "Light Heavyweight",
     firstName: "Dan",
     nickname: "Hendo",
@@ -39938,6 +40218,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "281",
     weightClass: "Light Heavyweight",
     firstName: "Rampage",
     nickname: "",
@@ -40071,6 +40352,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "282",
     weightClass: "Light Heavyweight",
     firstName: "Anthony",
     nickname: "Rumble",
@@ -40204,6 +40486,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "283",
     weightClass: "Light Heavyweight",
     firstName: "John",
     nickname: "Bones",
@@ -40369,6 +40652,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "284",
     weightClass: "Light Heavyweight",
     firstName: "Nikita",
     nickname: "The Miner",
@@ -40513,6 +40797,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "285",
     weightClass: "Light Heavyweight",
     firstName: "Ilir",
     nickname: "The Sledgehammer",
@@ -40648,6 +40933,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "286",
     weightClass: "Light Heavyweight",
     firstName: "Chuck",
     nickname: "The Iceman",
@@ -40781,6 +41067,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "287",
     weightClass: "Light Heavyweight",
     firstName: "Lyoto",
     nickname: "The Dragon",
@@ -40934,6 +41221,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "288",
     weightClass: "Light Heavyweight",
     firstName: "Jimi",
     nickname: "Poster Boy",
@@ -41068,6 +41356,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "289",
     weightClass: "Light Heavyweight",
     firstName: "Antônio",
     nickname: "Minotauro",
@@ -41203,6 +41492,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "290",
     weightClass: "Light Heavyweight",
     firstName: "Volkan",
     nickname: "No Time",
@@ -41346,6 +41636,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "291",
     weightClass: "Light Heavyweight",
     firstName: "Tito",
     nickname: "The Huntington Beach Bad Boy",
@@ -41479,6 +41770,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "292",
     weightClass: "Light Heavyweight",
     firstName: "Jiri",
     nickname: "Denisa",
@@ -41628,6 +41920,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "293",
     weightClass: "Light Heavyweight",
     firstName: "Aleksandar",
     nickname: "",
@@ -41774,6 +42067,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "294",
     weightClass: "Light Heavyweight",
     firstName: "Dominick",
     nickname: "The Devastator",
@@ -41914,6 +42208,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "295",
     weightClass: "Light Heavyweight",
     firstName: "Luke",
     nickname: "",
@@ -42059,6 +42354,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "296",
     weightClass: "Light Heavyweight",
     firstName: "Shogun",
     nickname: "",
@@ -42197,6 +42493,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "297",
     weightClass: "Light Heavyweight",
     firstName: "Ovince",
     nickname: "Saint",
@@ -42336,6 +42633,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "298",
     weightClass: "Light Heavyweight",
     firstName: "Gökhan",
     nickname: "The Rebel",
@@ -42483,6 +42781,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "299",
     weightClass: "Light Heavyweight",
     firstName: "Thiago",
     nickname: "Marreta",
@@ -42639,6 +42938,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "300",
     weightClass: "Light Heavyweight",
     firstName: "Anderson",
     nickname: "The Spider",
@@ -42788,6 +43088,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "301",
     weightClass: "Light Heavyweight",
     firstName: "Wanderlei",
     nickname: "The Axe Murderer",
@@ -42922,6 +43223,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "302",
     weightClass: "Light Heavyweight",
     firstName: "Anthony",
     nickname: "Lionheart",
@@ -43061,6 +43363,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "303",
     weightClass: "Light Heavyweight",
     firstName: "Ronaldo",
     nickname: "Jacaré",
@@ -43198,6 +43501,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "304",
     weightClass: "Light Heavyweight",
     firstName: "Glover",
     nickname: "",
@@ -43331,6 +43635,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "305",
     weightClass: "Light Heavyweight",
     firstName: "Gian",
     nickname: "",
@@ -43463,6 +43768,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "306",
     weightClass: "Light Heavyweight",
     firstName: "Johnny",
     nickname: "",
@@ -43607,6 +43913,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "307",
     weightClass: "Light Heavyweight",
     firstName: "Chris",
     nickname: "The All-American",
@@ -43750,6 +44057,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "308",
     weightClass: "Light Heavyweight",
     firstName: "Dana",
     nickname: "",
@@ -43887,6 +44195,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "309",
     weightClass: "Heavyweight",
     firstName: "Andrei",
     nickname: "The Pit Bull",
@@ -44032,6 +44341,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "310",
     weightClass: "Heavyweight",
     firstName: "Andre",
     nickname: "The Natural",
@@ -44158,6 +44468,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "311",
     weightClass: "Heavyweight",
     firstName: "Curtis",
     nickname: "Razor",
@@ -44292,6 +44603,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "312",
     weightClass: "Heavyweight",
     firstName: "Mark",
     nickname: "The Hammer",
@@ -44425,6 +44737,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "313",
     weightClass: "Heavyweight",
     firstName: "Daniel",
     nickname: "DC",
@@ -44568,6 +44881,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "314",
     weightClass: "Heavyweight",
     firstName: "Junior",
     nickname: "Cigano",
@@ -44711,6 +45025,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "315",
     weightClass: "Heavyweight",
     firstName: "Todd",
     nickname: "",
@@ -44843,6 +45158,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "316",
     weightClass: "Heavyweight",
     firstName: "Isaac",
     nickname: "Ice Cold",
@@ -44969,6 +45285,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "317",
     weightClass: "Heavyweight",
     firstName: "Tyson",
     nickname: "The Gypsy King",
@@ -45100,6 +45417,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "318",
     weightClass: "Heavyweight",
     firstName: "Ciryl",
     nickname: "Bon Gamin",
@@ -45254,6 +45572,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "319",
     weightClass: "Heavyweight",
     firstName: "Alexander",
     nickname: "The Mauler",
@@ -45404,6 +45723,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "320",
     weightClass: "Heavyweight",
     firstName: "Anthony",
     nickname: "Rumble",
@@ -45537,6 +45857,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "321",
     weightClass: "Heavyweight",
     firstName: "John",
     nickname: "Bones",
@@ -45702,6 +46023,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "322",
     weightClass: "Heavyweight",
     firstName: "Anthony",
     nickname: "AJ",
@@ -45835,6 +46157,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "323",
     weightClass: "Heavyweight",
     firstName: "Ilir",
     nickname: "The Sledgehammer",
@@ -45970,6 +46293,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "324",
     weightClass: "Heavyweight",
     firstName: "Brock",
     nickname: "",
@@ -46100,6 +46424,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "325",
     weightClass: "Heavyweight",
     firstName: "Derrick",
     nickname: "The Black Beast",
@@ -46246,6 +46571,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "326",
     weightClass: "Heavyweight",
     firstName: "Stipe",
     nickname: "",
@@ -46389,6 +46715,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "327",
     weightClass: "Heavyweight",
     firstName: "Francis",
     nickname: "The Predator",
@@ -46527,6 +46854,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "328",
     weightClass: "Heavyweight",
     firstName: "Antônio",
     nickname: "Minotauro",
@@ -46668,6 +46996,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "329",
     weightClass: "Heavyweight",
     firstName: "Aleksei",
     nickname: "The Boa Constrictor",
@@ -46802,6 +47131,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "330",
     weightClass: "Heavyweight",
     firstName: "Alistair",
     nickname: "The Demolition Man",
@@ -46946,6 +47276,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "331",
     weightClass: "Heavyweight",
     firstName: "Ben",
     nickname: "",
@@ -47081,6 +47412,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "332",
     weightClass: "Heavyweight",
     firstName: "Jairzinho",
     nickname: "Bigi Boy",
@@ -47216,6 +47548,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "333",
     weightClass: "Heavyweight",
     firstName: "Dan",
     nickname: "The Beast",
@@ -47349,6 +47682,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "334",
     weightClass: "Heavyweight",
     firstName: "Kimbo",
     nickname: "",
@@ -47480,6 +47814,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "335",
     weightClass: "Heavyweight",
     firstName: "Stefan",
     nickname: "Skyscraper",
@@ -47617,6 +47952,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "336",
     weightClass: "Heavyweight",
     firstName: "Tai",
     nickname: "Bam Bam",
@@ -47753,6 +48089,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "337",
     weightClass: "Heavyweight",
     firstName: "Cain",
     nickname: "",
@@ -47892,6 +48229,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "338",
     weightClass: "Heavyweight",
     firstName: "Alexander",
     nickname: "Drago",
@@ -48036,6 +48374,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "339",
     weightClass: "Heavyweight",
     firstName: "Fabricio",
     nickname: "Vai Cavalo",
@@ -48186,6 +48525,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "340",
     weightClass: "Heavyweight",
     firstName: "Dana",
     nickname: "",
@@ -48323,6 +48663,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "341",
     weightClass: "Generic",
     firstName: "Boxer",
     nickname: "",
@@ -48466,6 +48807,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "342",
     weightClass: "Generic",
     firstName: "Boxer",
     nickname: "",
@@ -48611,6 +48953,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "343",
     weightClass: "Generic",
     firstName: "Boxer",
     nickname: "",
@@ -48778,6 +49121,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "344",
     weightClass: "Generic",
     firstName: "Kickboxer",
     nickname: "",
@@ -48929,6 +49273,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "345",
     weightClass: "Generic",
     firstName: "Kickboxer",
     nickname: "",
@@ -49091,6 +49436,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "346",
     weightClass: "Generic",
     firstName: "Kickboxer",
     nickname: "",
@@ -49246,6 +49592,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "347",
     weightClass: "Generic",
     firstName: "Balanced",
     nickname: "",
@@ -49393,6 +49740,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "348",
     weightClass: "Generic",
     firstName: "Balanced",
     nickname: "",
@@ -49531,6 +49879,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "349",
     weightClass: "Generic",
     firstName: "Balanced",
     nickname: "",
@@ -49687,6 +50036,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "350",
     weightClass: "Generic",
     firstName: "Balanced",
     nickname: "",
@@ -49852,6 +50202,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "351",
     weightClass: "Generic",
     firstName: "Wrestler",
     nickname: "",
@@ -49992,6 +50343,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "352",
     weightClass: "Generic",
     firstName: "Wrestler",
     nickname: "",
@@ -50130,6 +50482,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "353",
     weightClass: "Generic",
     firstName: "Jiu-Jitsu",
     nickname: "",
@@ -50273,6 +50626,7 @@ const ufcRoster = [
     },
   },
   {
+    id: "354",
     weightClass: "Generic",
     firstName: "Jiu-Jitsu",
     nickname: "",
