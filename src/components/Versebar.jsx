@@ -7,6 +7,8 @@ import "./Versebar.css";
 import dropdownImg from "../assets/dropdown-white.png";
 
 export default function Versebar(prop) {
+  const [isWeightShown, setIsWeightShown] = React.useState(false);
+  const [areFightersShown, setAreFightersShown] = React.useState(false);
   const weightClasses = [
     "Strawwight",
     "Flyweight (W)",
@@ -21,23 +23,24 @@ export default function Versebar(prop) {
     "Heavyweight",
   ];
 
-  function toggleDropdown(e) {
-    let id =
-      e.target.className == "weight" ? "dropdown-classes" : "dropdown-fighters";
-    let dropdown = document.getElementById(id).style;
-    // let dropdownFighters = document.getElementById("dropdown-fighters").style;
-    // let dropdownClasses = document.getElementById("dropdown-classes").style;
-    dropdown.display == "none"
-      ? (dropdown.display = "block")
-      : (dropdown.display = "none");
+  function toggleWeight() {
+    setIsWeightShown((prevState) => !prevState);
+    areFightersShown
+      ? setAreFightersShown((prevState) => !prevState)
+      : areFightersShown;
+  }
+
+  function toggleFighters() {
+    setAreFightersShown((prevState) => !prevState);
+    isWeightShown ? setIsWeightShown((prevState) => !prevState) : isWeightShown;
   }
 
   const fighterList = prop.list.map((fighter) => {
     return (
-      <p key={nanoid()}>
-        {fighter.firstName +
-          (fighter.nickname ? ` "${fighter.nickname}" ` : " ") +
-          fighter.lastName}
+      <p key={fighter.id} data-id={fighter.id} onClick={prop.change}>
+        {fighter.firstName.toUpperCase() +
+          (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
+          fighter.lastName.toUpperCase()}
       </p>
     );
   });
@@ -48,21 +51,25 @@ export default function Versebar(prop) {
 
   return (
     <div className="versus">
-      <div id="dropdown-fighters">{fighterList}</div>
-      <div id="dropdown-classes">{weightClassList}</div>
+      <div className={areFightersShown ? "dropdown shown" : "dropdown hidden"}>
+        {fighterList}
+      </div>
+      <div className={isWeightShown ? "dropdown shown" : "dropdown hidden"}>
+        {weightClassList}
+      </div>
       <div className="weightclass-container">
-        <span className="weight" onClick={toggleDropdown}>
+        <span className="weight" onClick={toggleWeight}>
           {prop.weight.toUpperCase()}
         </span>
         <img src={dropdownImg} />
       </div>
       <div className="fighter-container">
-        <div className="fighter-select dropdown" onClick={toggleDropdown}>
+        <div className="fighter-select" onClick={toggleFighters}>
           <span className="red-fighter">MCGREGOR</span>
           <img src={dropdownImg} />
         </div>
         <span className="vs">VS</span>
-        <div className="fighter-select dropdown" onClick={toggleDropdown}>
+        <div className="fighter-select" onClick={toggleFighters}>
           <span className="blue-fighter">POIRIER</span>
           <img src={dropdownImg} />
         </div>

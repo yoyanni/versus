@@ -69,3 +69,10 @@ This would have been something that could have been done on the previous commit 
 ### Add id to data
 
 Should have added this previously, ran into a problem where I needed the ids to select the correct fighter in the whole data set instead the filtered weightclass set (since .filter returns a new array and new indices)
+
+### Fix dropdown & fighter ids
+
+Instead of using vanilla JS to display or hide the dropdowns, I used React, MUCH easier and faster. A couple boolean states, two different classes and 2 ternaries. 
+
+I also added the ids to each fighter to be able to select the correct one in the parent component and pass it on to the sibling component.
+
