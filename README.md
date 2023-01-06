@@ -72,7 +72,14 @@ Should have added this previously, ran into a problem where I needed the ids to 
 
 ### Fix dropdown & fighter ids
 
-Instead of using vanilla JS to display or hide the dropdowns, I used React, MUCH easier and faster. A couple boolean states, two different classes and 2 ternaries. 
+Instead of using vanilla JS to display or hide the dropdowns, I used React, MUCH easier and faster. A couple boolean states, two different classes and 2 ternaries.
 
 I also added the ids to each fighter to be able to select the correct one in the parent component and pass it on to the sibling component.
 
+### Update Weight and Fighter States
+
+Weight and Fighters States can now be updated. I had to add a side state in Versebar which helps determine which side (red or blue) I will be updating for the Fighters State. I was not sure if this was the best method as it seemed a bit more convoluted but at the moment it makes a bit more sense, it helps by re-using the same code (if I had split the Fighters State into two, I would have to split everything I do believe) and it helps by being able to pass both fighters with one state to another component.
+
+When the Weight State is updated the Fighters State gets reset, it checks thought if the Weight State is the same. If it is then it wont update and wont reset the Fighters State. 
+
+I also removed nanoid, thought it was required but I used the indices.

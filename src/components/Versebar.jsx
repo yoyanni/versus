@@ -1,7 +1,5 @@
 import React from "react";
 
-import { nanoid } from "nanoid";
-
 import "./Versebar.css";
 
 import dropdownImg from "../assets/dropdown-white.png";
@@ -9,6 +7,7 @@ import dropdownImg from "../assets/dropdown-white.png";
 export default function Versebar(prop) {
   const [isWeightShown, setIsWeightShown] = React.useState(false);
   const [areFightersShown, setAreFightersShown] = React.useState(false);
+  const [side, setSide] = React.useState("");
   const weightClasses = [
     "Strawwight",
     "Flyweight (W)",
@@ -30,14 +29,20 @@ export default function Versebar(prop) {
       : areFightersShown;
   }
 
-  function toggleFighters() {
+  function toggleFighters(e) {
+    setSide(e.target.id);
     setAreFightersShown((prevState) => !prevState);
     isWeightShown ? setIsWeightShown((prevState) => !prevState) : isWeightShown;
   }
 
   const fighterList = prop.list.map((fighter) => {
     return (
-      <p key={fighter.id} data-id={fighter.id} onClick={prop.change}>
+      <p
+        key={fighter.id}
+        id={fighter.id}
+        data-side={side}
+        onClick={prop.changeFighters}
+      >
         {fighter.firstName.toUpperCase() +
           (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
           fighter.lastName.toUpperCase()}
@@ -45,8 +50,12 @@ export default function Versebar(prop) {
     );
   });
 
-  const weightClassList = weightClasses.map((weight) => {
-    return <p key={nanoid()}>{weight.toUpperCase()}</p>;
+  const weightClassList = weightClasses.map((weight, index) => {
+    return (
+      <p key={index} onClick={prop.changeWeight}>
+        {weight.toUpperCase()}
+      </p>
+    );
   });
 
   return (
@@ -65,12 +74,16 @@ export default function Versebar(prop) {
       </div>
       <div className="fighter-container">
         <div className="fighter-select" onClick={toggleFighters}>
-          <span className="red-fighter">MCGREGOR</span>
+          <span id="red" className="red-fighter">
+            MCGREGOR
+          </span>
           <img src={dropdownImg} />
         </div>
         <span className="vs">VS</span>
         <div className="fighter-select" onClick={toggleFighters}>
-          <span className="blue-fighter">POIRIER</span>
+          <span id="blue" className="blue-fighter">
+            POIRIER
+          </span>
           <img src={dropdownImg} />
         </div>
       </div>
