@@ -83,3 +83,7 @@ Weight and Fighters States can now be updated. I had to add a side state in Vers
 When the Weight State is updated the Fighters State gets reset, it checks thought if the Weight State is the same. If it is then it wont update and wont reset the Fighters State. 
 
 I also removed nanoid, thought it was required but I used the indices.
+
+### Update Data
+
+The recovery stat in Health was missing, also a few details were cleaned up.
