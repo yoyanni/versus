@@ -8,22 +8,19 @@ import "./Card.css";
 export default function Card({ fighters }) {
   return (
     <div className="all-cards">
-      <FighterInfo
-        red={fighters.redFighter.basic}
-        blue={fighters.blueFighter.basic}
-      />
-      <Perk red={fighters.redFighter.perks} blue={fighters.blueFighter.perks} />
+      <FighterInfo red={fighters.red.basic} blue={fighters.blue.basic} />
+      <Perk red={fighters.red.perks} blue={fighters.blue.perks} />
       <StandUp
-        red={fighters.redFighter.stats.standUp}
-        blue={fighters.blueFighter.stats.standUp}
+        red={fighters.red.stats.standUp}
+        blue={fighters.blue.stats.standUp}
       />
       <Grappling
-        red={fighters.redFighter.stats.grappling}
-        blue={fighters.blueFighter.stats.grappling}
+        red={fighters.red.stats.grappling}
+        blue={fighters.blue.stats.grappling}
       />
       <Health
-        red={fighters.redFighter.stats.health}
-        blue={fighters.blueFighter.stats.health}
+        red={fighters.red.stats.health}
+        blue={fighters.blue.stats.health}
       />
     </div>
   );

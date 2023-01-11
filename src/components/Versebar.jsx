@@ -4,28 +4,14 @@ import "./Versebar.css";
 
 import dropdownImg from "../assets/dropdown-white.png";
 
-const weightClasses = [
-  "Generic",
-  "Strawwight",
-  "Flyweight (W)",
-  "Bantamweight (W)",
-  "Flyweight",
-  "Bantamweight",
-  "Featherweight",
-  "Lightweight",
-  "Welterweight",
-  "Middleweight",
-  "Light Heavyweight",
-  "Heavyweight",
-];
-
 export default function Versebar({
-  weightClass,
-  filteredFighters,
-  changeFighters,
-  changeWeight,
+  weightClasses,
+  selectedWeight,
+  weightFighters,
   red,
   blue,
+  changeFighters,
+  changeWeight,
 }) {
   const [isWeightShown, setIsWeightShown] = useState(false);
   const [areFightersShown, setAreFightersShown] = useState(false);
@@ -34,38 +20,44 @@ export default function Versebar({
   // UI Weight
   function toggleWeight() {
     setIsWeightShown((prevState) => !prevState);
-    areFightersShown
-      ? setAreFightersShown((prevState) => !prevState)
-      : areFightersShown;
-  }
-  // UI FIghters
-  function toggleFighters(e) {
-    setSide(e.target.id);
-    setAreFightersShown((prevState) => !prevState);
-    isWeightShown ? setIsWeightShown((prevState) => !prevState) : isWeightShown;
+    areFightersShown && setAreFightersShown((prevState) => !prevState);
   }
 
-  // Print list of Fighters
-  const fighterList = filteredFighters.map((fighter) => {
-    return (
-      <p
-        key={fighter.id}
-        id={fighter.id}
-        data-side={side}
-        onClick={changeFighters}
-      >
-        {fighter.firstName.toUpperCase() +
-          (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
-          fighter.lastName.toUpperCase()}
-      </p>
-    );
-  });
+  //Close UI once chosen
+  function handleWeightClick(id) {
+    changeWeight(id);
+    setIsWeightShown((prevState) => !prevState);
+  }
 
   // Print list of Weight Classes
   const weightClassList = weightClasses.map((weight, index) => {
     return (
-      <p key={index} onClick={changeWeight}>
-        {weightClass.toUpperCase()}
+      <p key={index} onClick={() => handleWeightClick(index)}>
+        {weight.toUpperCase()}
+      </p>
+    );
+  });
+
+  // UI FIghters
+  function toggleFighters(e) {
+    setSide(e.target.id);
+    setAreFightersShown((prevState) => !prevState);
+    isWeightShown && setIsWeightShown((prevState) => !prevState);
+  }
+
+  //Close UI once chosen
+  function handleFighterClick(id, side) {
+    changeFighters(id, side);
+    setAreFightersShown((prevState) => !prevState);
+  }
+
+  // Print list of Fighters
+  const fighterList = weightFighters.map((fighter) => {
+    return (
+      <p key={fighter.id} onClick={() => handleFighterClick(fighter.id, side)}>
+        {fighter.firstName.toUpperCase() +
+          (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
+          fighter.lastName.toUpperCase()}
       </p>
     );
   });
@@ -80,7 +72,7 @@ export default function Versebar({
       </div>
       <div className="weightclass-container">
         <span className="weight" onClick={toggleWeight}>
-          {weightClass.toUpperCase()}
+          {selectedWeight.toUpperCase()}
         </span>
         <img src={dropdownImg} />
       </div>

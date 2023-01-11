@@ -105,3 +105,13 @@ Update the below files:
 **Note:** 
 - .reduce() will use the accumilator as the initial value if you do not provide one after the callback function
 - At the moment the fighters will remain the same when changing Weight State, as mentioned previously, that is because the weight state is required but it wont have the most updated version. It will have the previous version still. Have to figure out how to fix that.
+
+### Refactor Code
+
+Re-wrote code with a bit of a better understanding of React due have a quick read through React Docs (Beta).
+
+Resolved the previous issue with the fighters by having a set of default fighters for each weight class. 
+
+The Generic WeightClass always loads with all the other Weight Classes.
+
+Also now the dropdowns hide away when you select a fighter.
