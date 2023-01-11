@@ -1,95 +1,110 @@
 import "./StandUp.css";
 
-export default function StandUp() {
+export default function StandUp({ red, blue }) {
+  const redAcc = Object.values(red).reduce((acc, cur, index) => {
+    if (index == 0) return acc;
+    return acc + cur;
+  }, 0);
+  const blueAcc = Object.values(blue).reduce((acc, cur, index) => {
+    if (index == 0) return acc;
+    return acc + cur;
+  }, 0);
+  const redAverage = Math.round((redAcc / 10) * 10) / 10;
+  const blueAverage = Math.round((blueAcc / 10) * 10) / 10;
+
   return (
     <div className="standup-info">
       <div className="title-card">
-        <span className="red-standup">5 (93.7)</span>
+        <span className="red-standup">
+          {red.standUp} ({redAverage})
+        </span>
         <span>Stand-Up</span>
-        <span className="blue-standup">(92.8) 5</span>
+        <span className="blue-standup">
+          ({blueAverage}) {blue.standUp}
+        </span>
       </div>
       <div className="standup">
         <div className="red-fighter-standup">
           <div>
             <span>Punch Speed</span>
-            <span>97</span>
+            <span>{red.punchSpeed}</span>
           </div>
           <div>
             <span>Punch Power</span>
-            <span>96</span>
+            <span>{red.punchPower}</span>
           </div>
           <div>
             <span>Accuracy</span>
-            <span>99</span>
+            <span>{red.accuracy}</span>
           </div>
           <div>
             <span>Blocking</span>
-            <span>92</span>
+            <span>{red.blocking}</span>
           </div>
           <div>
             <span>Head Movement</span>
-            <span>95</span>
+            <span>{red.headMovement}</span>
           </div>
           <div>
             <span>Footwork</span>
-            <span>97</span>
+            <span>{red.footwork}</span>
           </div>
           <div>
             <span>Switch Stance</span>
-            <span>87</span>
+            <span>{red.switchStance}</span>
           </div>
           <div>
             <span>Takedown Def.</span>
-            <span>91</span>
+            <span>{red.takedownDefence}</span>
           </div>
           <div>
             <span>Kick Power</span>
-            <span>91</span>
+            <span>{red.kickPower}</span>
           </div>
           <div>
             <span>Kick Speed</span>
-            <span>92</span>
+            <span>{red.kickSpeed}</span>
           </div>
         </div>
         <div className="blue-fighter-standup">
           <div>
-            <span>96</span>
+            <span>{blue.punchSpeed}</span>
             <span>Punch Speed</span>
           </div>
           <div>
-            <span>95</span>
+            <span>{blue.punchPower}</span>
             <span>Punch Power</span>
           </div>
           <div>
-            <span>97</span>
+            <span>{blue.accuracy}</span>
             <span>Accuracy</span>
           </div>
           <div>
-            <span>93</span>
+            <span>{blue.blocking}</span>
             <span>Blocking</span>
           </div>
           <div>
-            <span>94</span>
+            <span>{blue.headMovement}</span>
             <span>Head Movement</span>
           </div>
           <div>
-            <span>94</span>
+            <span>{blue.footwork}</span>
             <span>Footwork</span>
           </div>
           <div>
-            <span>90</span>
+            <span>{blue.switchStance}</span>
             <span>Switch Stance</span>
           </div>
           <div>
-            <span>89</span>
+            <span>{blue.takedownDefence}</span>
             <span>Takedown Def.</span>
           </div>
           <div>
-            <span>90</span>
+            <span>{blue.kickPower}</span>
             <span>Kick Power</span>
           </div>
           <div>
-            <span>90</span>
+            <span>{blue.kickSpeed}</span>
             <span>Kick Speed</span>
           </div>
         </div>

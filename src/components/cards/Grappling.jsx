@@ -1,79 +1,94 @@
 import "./Grappling.css";
 
-export default function Grappling() {
+export default function Grappling({ red, blue }) {
+  const redAcc = Object.values(red).reduce((acc, cur, index) => {
+    if (index == 0) return acc;
+    return acc + cur;
+  }, 0);
+  const blueAcc = Object.values(blue).reduce((acc, cur, index) => {
+    if (index == 0) return acc;
+    return acc + cur;
+  }, 0);
+  const redAverage = Math.round((redAcc / 8) * 10) / 10;
+  const blueAverage = Math.round((blueAcc / 8) * 10) / 10;
+
   return (
     <div className="grappling-info">
       <div className="title-card">
-        <span className="red-grappling">3.5 (88.6)</span>
+        <span className="red-grappling">
+          {red.grappling} ({redAverage})
+        </span>
         <span>Grappling</span>
-        <span className="blue-grappling">(89.9)4</span>
+        <span className="blue-grappling">
+          ({blueAverage}) {blue.grappling}
+        </span>
       </div>
       <div className="grappling">
         <div className="red-fighter-grappling">
           <div>
             <span>Takedowns</span>
-            <span>84</span>
+            <span>{red.takedowns}</span>
           </div>
           <div>
             <span>Top Control</span>
-            <span>89</span>
+            <span>{red.topControl}</span>
           </div>
           <div>
             <span>Bottom Control</span>
-            <span>89</span>
+            <span>{red.bottomControl}</span>
           </div>
           <div>
             <span>Submission</span>
-            <span>84</span>
+            <span>{red.submission}</span>
           </div>
           <div>
             <span>Submission Def.</span>
-            <span>90</span>
+            <span>{red.submissionDefence}</span>
           </div>
           <div>
             <span>Ground Striking</span>
-            <span>93</span>
+            <span>{red.groundStriking}</span>
           </div>
           <div>
             <span>Clinch Striking</span>
-            <span>90</span>
+            <span>{red.clinchStriking}</span>
           </div>
           <div>
             <span>Clinch Control</span>
-            <span>90</span>
+            <span>{red.clinchControl}</span>
           </div>
         </div>
         <div className="blue-fighter-grappling">
           <div>
-            <span>89</span>
+            <span>{blue.takedowns}</span>
             <span>Takedowns</span>
           </div>
           <div>
-            <span>89</span>
+            <span>{blue.topControl}</span>
             <span>Top Control</span>
           </div>
           <div>
-            <span>88</span>
+            <span>{blue.bottomControl}</span>
             <span>Bottom Control</span>
           </div>
           <div>
-            <span>92</span>
+            <span>{blue.submission}</span>
             <span>Submission</span>
           </div>
           <div>
-            <span>92</span>
+            <span>{blue.submissionDefence}</span>
             <span>Submission Def.</span>
           </div>
           <div>
-            <span>89</span>
+            <span>{blue.groundStriking}</span>
             <span>Ground Striking</span>
           </div>
           <div>
-            <span>90</span>
+            <span>{blue.clinchStriking}</span>
             <span>Clinch Striking</span>
           </div>
           <div>
-            <span>90</span>
+            <span>{blue.clinchControl}</span>
             <span>Clinch Control</span>
           </div>
         </div>

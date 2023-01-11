@@ -1,47 +1,58 @@
-import React from "react";
+import { useState } from "react";
 
 import "./Versebar.css";
 
 import dropdownImg from "../assets/dropdown-white.png";
 
-export default function Versebar(prop) {
-  const [isWeightShown, setIsWeightShown] = React.useState(false);
-  const [areFightersShown, setAreFightersShown] = React.useState(false);
-  const [side, setSide] = React.useState("");
-  const weightClasses = [
-    "Strawwight",
-    "Flyweight (W)",
-    "Bantamweight (W)",
-    "Flyweight",
-    "Bantamweight",
-    "Featherweight",
-    "Lightweight",
-    "Welterweight",
-    "Middleweight",
-    "Light Heavyweight",
-    "Heavyweight",
-  ];
+const weightClasses = [
+  "Generic",
+  "Strawwight",
+  "Flyweight (W)",
+  "Bantamweight (W)",
+  "Flyweight",
+  "Bantamweight",
+  "Featherweight",
+  "Lightweight",
+  "Welterweight",
+  "Middleweight",
+  "Light Heavyweight",
+  "Heavyweight",
+];
 
+export default function Versebar({
+  weightClass,
+  filteredFighters,
+  changeFighters,
+  changeWeight,
+  red,
+  blue,
+}) {
+  const [isWeightShown, setIsWeightShown] = useState(false);
+  const [areFightersShown, setAreFightersShown] = useState(false);
+  const [side, setSide] = useState("");
+
+  // UI Weight
   function toggleWeight() {
     setIsWeightShown((prevState) => !prevState);
     areFightersShown
       ? setAreFightersShown((prevState) => !prevState)
       : areFightersShown;
   }
-
+  // UI FIghters
   function toggleFighters(e) {
     setSide(e.target.id);
     setAreFightersShown((prevState) => !prevState);
     isWeightShown ? setIsWeightShown((prevState) => !prevState) : isWeightShown;
   }
 
-  const fighterList = prop.list.map((fighter) => {
+  // Print list of Fighters
+  const fighterList = filteredFighters.map((fighter) => {
     return (
       <p
         key={fighter.id}
         id={fighter.id}
         data-side={side}
-        onClick={prop.changeFighters}
+        onClick={changeFighters}
       >
         {fighter.firstName.toUpperCase() +
           (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
@@ -50,10 +61,11 @@ export default function Versebar(prop) {
     );
   });
 
+  // Print list of Weight Classes
   const weightClassList = weightClasses.map((weight, index) => {
     return (
-      <p key={index} onClick={prop.changeWeight}>
-        {weight.toUpperCase()}
+      <p key={index} onClick={changeWeight}>
+        {weightClass.toUpperCase()}
       </p>
     );
   });
@@ -68,21 +80,21 @@ export default function Versebar(prop) {
       </div>
       <div className="weightclass-container">
         <span className="weight" onClick={toggleWeight}>
-          {prop.weight.toUpperCase()}
+          {weightClass.toUpperCase()}
         </span>
         <img src={dropdownImg} />
       </div>
       <div className="fighter-container">
         <div className="fighter-select" onClick={toggleFighters}>
           <span id="red" className="red-fighter">
-            MCGREGOR
+            {red.lastName.toUpperCase()}
           </span>
           <img src={dropdownImg} />
         </div>
         <span className="vs">VS</span>
         <div className="fighter-select" onClick={toggleFighters}>
           <span id="blue" className="blue-fighter">
-            POIRIER
+            {blue.lastName.toUpperCase()}
           </span>
           <img src={dropdownImg} />
         </div>

@@ -5,15 +5,26 @@ import Grappling from "./cards/Grappling";
 import Health from "./cards/Health";
 import "./Card.css";
 
-export default function Card() {
+export default function Card({ fighters }) {
   return (
-    // className="basic-card"||"perk-card"||"standup-card"||"grap-card"||"health-card"
     <div className="all-cards">
-      <FighterInfo />
-      <Perk />
-      <StandUp />
-      <Grappling />
-      <Health />
+      <FighterInfo
+        red={fighters.redFighter.basic}
+        blue={fighters.blueFighter.basic}
+      />
+      <Perk red={fighters.redFighter.perks} blue={fighters.blueFighter.perks} />
+      <StandUp
+        red={fighters.redFighter.stats.standUp}
+        blue={fighters.blueFighter.stats.standUp}
+      />
+      <Grappling
+        red={fighters.redFighter.stats.grappling}
+        blue={fighters.blueFighter.stats.grappling}
+      />
+      <Health
+        red={fighters.redFighter.stats.health}
+        blue={fighters.blueFighter.stats.health}
+      />
     </div>
   );
 }

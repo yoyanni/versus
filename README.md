@@ -87,3 +87,21 @@ I also removed nanoid, thought it was required but I used the indices.
 ### Update Data
 
 The recovery stat in Health was missing, also a few details were cleaned up.
+
+### Update Stats in Card Component 
+
+Update the below files:
+- App
+  - Added initial Fighters
+  - Removed the resetting of Fighter State as it would crash the app. (it will need to be updated later)
+  - Changed .filter() to .find() to locate one item. (Which is the correct method to use for one item)
+  - Passed states to Card & Versebar components to allow the dynamic data.
+- Card, FighterInfo, Perk, StandUp, Grappling and Health
+  - All received props, mainly the red and blue fighters.
+  - Used .reduce() to locate the average stat for each specific card
+- Versebar
+ - Updated names according to Fighter State that was passed down.
+
+**Note:** 
+- .reduce() will use the accumilator as the initial value if you do not provide one after the callback function
+- At the moment the fighters will remain the same when changing Weight State, as mentioned previously, that is because the weight state is required but it wont have the most updated version. It will have the previous version still. Have to figure out how to fix that.
