@@ -1,72 +1,102 @@
-.perk-info {
-  /* Display */
-  background-color: #d9d9d9;
-  box-shadow: 0 0 15px #000a;
-
-  /* Positioning */
-  display: flex;
-  flex-direction: column;
-
-  /* Spacing */
-  padding: 0em 0.5em 0.5em 0.5em;
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.title-card {
-  /* Positioning */
+.perks {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+}
 
-  /* Text */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
+.red-perks {
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: start;
 }
 
 .red-perks,
 .blue-perks {
-  /* Display */
-  border-bottom: 1px solid #000;
+  flex: 1;
 
-  /* Spacing */
-  padding-inline: 0.5rem;
-
-  /* Text */
-  font-size: 12px;
-}
-
-.perks {
-  /* Positioning */
+  /* Column was not working due to align-items would not work as except with border-bottom 
+  so row was selected, flex-basis was chosen and flex-wrap was given to resemble a column*/
   display: flex;
-  justify-content: space-between;
-
-  /* Text */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.red-fighter-perks,
-.blue-fighter-perks {
-  /* Display */
-  display: flex;
-  flex-direction: column;
+.red-perks > div,
+.blue-perks > div {
+  flex-basis: 100%;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.red-fighter-perks {
-  align-items: flex-start;
+.red-perks > div {
+  text-align: start;
 }
 
-.blue-fighter-perks {
-  align-items: flex-end;
+.blue-perks > div {
+  text-align: end;
 }
 
-.blue-fighter-perks > span,
-.red-fighter-perks > span {
-  /* Positioning */
+.red-perks > div:nth-child(5),
+.blue-perks > div:nth-child(5) {
+  border-bottom: none;
+}
 
-  /* Display */
-  border-bottom: 1px solid #000;
+.stand-up {
+  background-color: #ff7a45;
+}
+
+.grappling {
+  background-color: #1677ff;
+}
+
+.health {
+  background-color: #389e0d;
+}
+
+/* Tooltip container */
+.tooltip {
+  /* Same result with static position */
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltiptext-red {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top: 0;
+  left: 70%;
+  z-index: 1;
+}
+
+.tooltiptext-blue {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top: 0;
+  right: 70%;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext-blue,
+.tooltip:hover .tooltiptext-red {
+  visibility: visible;
 }

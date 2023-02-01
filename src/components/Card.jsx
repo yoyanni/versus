@@ -11,6 +11,7 @@ export default function Card({ fighters }) {
       <FighterInfo red={fighters.red.basic} blue={fighters.blue.basic} />
       <Perk red={fighters.red.perks} blue={fighters.blue.perks} />
       <StandUp
+        fighters={fighters}
         red={fighters.red.stats.standUp}
         blue={fighters.blue.stats.standUp}
       />

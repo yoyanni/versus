@@ -5,23 +5,33 @@ export default function Perk({ red, blue }) {
   let blueCount = 0;
   const redPerks = red.map((perk, index) => {
     ++redCount;
-    return <span key={index}>{perk}</span>;
+    return (
+      <div key={index} className={`tooltip ${perk[2].toLowerCase()}`}>
+        <span className="tooltiptext-red">{perk[1]}</span>
+        {perk[0]}
+      </div>
+    );
   });
   const bluePerks = blue.map((perk, index) => {
     ++blueCount;
-    return <span key={index}>{perk}</span>;
+    return (
+      <div key={index} className={`tooltip ${perk[2].toLowerCase()}`}>
+        <span className="tooltiptext-blue">{perk[1]}</span>
+        {perk[0]}
+      </div>
+    );
   });
 
   return (
-    <div className="perk-info">
-      <div className="title-card">
-        <span className="red-perks">{redCount}</span>
-        <span>Perks</span>
-        <span className="blue-perks">{blueCount}</span>
+    <div className="perk-info shadow">
+      <div className="card-title heading-alt border-bottom">
+        <span>{redCount}</span>
+        <span className="heading">Perks</span>
+        <span>{blueCount}</span>
       </div>
-      <div className="perks">
-        <div className="red-fighter-perks">{redPerks}</div>
-        <div className="blue-fighter-perks">{bluePerks}</div>
+      <div className="perks content">
+        <div className="red-perks">{redPerks}</div>
+        <div className="blue-perks">{bluePerks}</div>
       </div>
     </div>
   );

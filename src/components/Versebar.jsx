@@ -32,9 +32,9 @@ export default function Versebar({
   // Print list of Weight Classes
   const weightClassList = weightClasses.map((weight, index) => {
     return (
-      <p key={index} onClick={() => handleWeightClick(index)}>
+      <div key={index} onClick={() => handleWeightClick(index)}>
         {weight.toUpperCase()}
-      </p>
+      </div>
     );
   });
 
@@ -54,41 +54,63 @@ export default function Versebar({
   // Print list of Fighters
   const fighterList = weightFighters.map((fighter) => {
     return (
-      <p key={fighter.id} onClick={() => handleFighterClick(fighter.id, side)}>
+      <div
+        key={fighter.id}
+        onClick={() => handleFighterClick(fighter.id, side)}
+      >
         {fighter.firstName.toUpperCase() +
           (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
           fighter.lastName.toUpperCase()}
-      </p>
+      </div>
     );
   });
 
   return (
-    <div className="versus">
-      <div className={areFightersShown ? "dropdown shown" : "dropdown hidden"}>
-        {fighterList}
-      </div>
-      <div className={isWeightShown ? "dropdown shown" : "dropdown hidden"}>
+    <div className="versus shadow-up">
+      <div
+        className={
+          isWeightShown
+            ? "dropdown bg-elevated sub-title shown"
+            : "dropdown hidden"
+        }
+      >
         {weightClassList}
       </div>
-      <div className="weightclass-container">
+
+      <div className="weightclass-container bg-elevated sub-title">
         <span className="weight" onClick={toggleWeight}>
           {selectedWeight.toUpperCase()}
         </span>
         <img src={dropdownImg} />
       </div>
-      <div className="fighter-container">
+
+      <div
+        className={
+          areFightersShown
+            ? "dropdown bg-container sub-title shown"
+            : "dropdown hidden"
+        }
+      >
+        {fighterList}
+      </div>
+
+      <div className="fighter-container bg-container title">
         <div className="fighter-select" onClick={toggleFighters}>
-          <span id="red" className="red-fighter">
-            {red.lastName.toUpperCase()}
-          </span>
           <img src={dropdownImg} />
+          <div className="scroll-container">
+            <div id="red" className="red-fighter scroll">
+              {`${red.firstName.toUpperCase()} "${red.nickname.toUpperCase()}" ${red.lastName.toUpperCase()}`}
+            </div>
+          </div>
         </div>
-        <span className="vs">VS</span>
+
         <div className="fighter-select" onClick={toggleFighters}>
-          <span id="blue" className="blue-fighter">
-            {blue.lastName.toUpperCase()}
-          </span>
           <img src={dropdownImg} />
+          <div className="scroll-container">
+            <div id="blue" className="blue-fighter scroll">
+              {`${blue.firstName.toUpperCase()} "${blue.nickname.toUpperCase()}" ${blue.lastName.toUpperCase()}`}
+            </div>
+          </div>
         </div>
       </div>
     </div>

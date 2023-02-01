@@ -13,83 +13,133 @@ export default function Grappling({ red, blue }) {
   const blueAverage = Math.round((blueAcc / 8) * 10) / 10;
 
   return (
-    <div className="grappling-info">
-      <div className="title-card">
-        <span className="red-grappling">
+    <div className="grappling-info shadow">
+      <div className="card-title heading-alt">
+        <span>
           {red.grappling} ({redAverage})
         </span>
-        <span>Grappling</span>
-        <span className="blue-grappling">
+        <span className="heading">Grappling</span>
+        <span>
           ({blueAverage}) {blue.grappling}
         </span>
       </div>
-      <div className="grappling">
-        <div className="red-fighter-grappling">
-          <div>
-            <span>Takedowns</span>
-            <span>{red.takedowns}</span>
+      <div className="stats">
+        <div className="stat-title sub-heading">Takedowns</div>
+        <div className="stat content">
+          <div className={red.takedowns > blue.takedowns ? "red" : undefined}>
+            {red.takedowns}
           </div>
-          <div>
-            <span>Top Control</span>
-            <span>{red.topControl}</span>
-          </div>
-          <div>
-            <span>Bottom Control</span>
-            <span>{red.bottomControl}</span>
-          </div>
-          <div>
-            <span>Submission</span>
-            <span>{red.submission}</span>
-          </div>
-          <div>
-            <span>Submission Def.</span>
-            <span>{red.submissionDefence}</span>
-          </div>
-          <div>
-            <span>Ground Striking</span>
-            <span>{red.groundStriking}</span>
-          </div>
-          <div>
-            <span>Clinch Striking</span>
-            <span>{red.clinchStriking}</span>
-          </div>
-          <div>
-            <span>Clinch Control</span>
-            <span>{red.clinchControl}</span>
+          <div className={blue.takedowns > red.takedowns ? "blue" : undefined}>
+            {blue.takedowns}
           </div>
         </div>
-        <div className="blue-fighter-grappling">
-          <div>
-            <span>{blue.takedowns}</span>
-            <span>Takedowns</span>
+        <div className="stat-title sub-heading">Top Control</div>
+        <div className="stat content">
+          <div className={red.topControl > blue.topControl ? "red" : undefined}>
+            {red.topControl}
           </div>
-          <div>
-            <span>{blue.topControl}</span>
-            <span>Top Control</span>
+          <div
+            className={blue.topControl > red.topControl ? "blue" : undefined}
+          >
+            {blue.topControl}
           </div>
-          <div>
-            <span>{blue.bottomControl}</span>
-            <span>Bottom Control</span>
+        </div>
+        <div className="stat-title sub-heading">Bottom Control</div>
+        <div className="stat content">
+          <div
+            className={
+              red.bottomControl > blue.bottomControl ? "red" : undefined
+            }
+          >
+            {red.bottomControl}
           </div>
-          <div>
-            <span>{blue.submission}</span>
-            <span>Submission</span>
+          <div
+            className={
+              blue.bottomControl > red.bottomControl ? "blue" : undefined
+            }
+          >
+            {blue.bottomControl}
           </div>
-          <div>
-            <span>{blue.submissionDefence}</span>
-            <span>Submission Def.</span>
+        </div>
+        <div className="stat-title sub-heading">Submission</div>
+        <div className="stat content">
+          <div className={red.submission > blue.submission ? "red" : undefined}>
+            {red.submission}
           </div>
-          <div>
-            <span>{blue.groundStriking}</span>
-            <span>Ground Striking</span>
+          <div
+            className={blue.submission > red.submission ? "blue" : undefined}
+          >
+            {blue.submission}
           </div>
-          <div>
-            <span>{blue.clinchStriking}</span>
-            <span>Clinch Striking</span>
+        </div>
+        <div className="stat-title sub-heading">Submission Def.</div>
+        <div className="stat content">
+          <div
+            className={
+              red.submissionDefence > blue.submissionDefence ? "red" : undefined
+            }
+          >
+            {red.submissionDefence}
           </div>
-          <div>
-            <span>{blue.clinchControl}</span>
-            <span>Clinch Control</span>
+          <div
+            className={
+              blue.submissionDefence > red.submissionDefence
+                ? "blue"
+                : undefined
+            }
+          >
+            {blue.submissionDefence}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Ground Striking</div>
+        <div className="stat content">
+          <div
+            className={
+              red.groundStriking > blue.groundStriking ? "red" : undefined
+            }
+          >
+            {red.groundStriking}
+          </div>
+          <div
+            className={
+              blue.groundStriking > red.groundStriking ? "blue" : undefined
+            }
+          >
+            {blue.groundStriking}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Clinch Striking</div>
+        <div className="stat content">
+          <div
+            className={
+              red.clinchStriking > blue.clinchStriking ? "red" : undefined
+            }
+          >
+            {red.clinchStriking}
+          </div>
+          <div
+            className={
+              blue.clinchStriking > red.clinchStriking ? "blue" : undefined
+            }
+          >
+            {blue.clinchStriking}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Clinch Control</div>
+        <div className="stat content">
+          <div
+            className={
+              red.clinchControl > blue.clinchControl ? "red" : undefined
+            }
+          >
+            {red.clinchControl}
+          </div>
+          <div
+            className={
+              blue.clinchControl > red.clinchControl ? "blue" : undefined
+            }
+          >
+            {blue.clinchControl}
           </div>
         </div>
       </div>

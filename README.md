@@ -115,3 +115,13 @@ Resolved the previous issue with the fighters by having a set of default fighter
 The Generic WeightClass always loads with all the other Weight Classes.
 
 Also now the dropdowns hide away when you select a fighter.
+
+### Refactor Code (UI)
+
+The application went through a refactoring for how it displays its data. Since it was difficult and not too great in terms of design I thought it needed a bit of a revamp.
+
+The data was also updated to include the rank of the top 15 fighters (in-game rank) and also to include more information on the perks.
+
+A tooltip was added to the perks, which is nice.
+
+Also the colours were added to understand the data easier.

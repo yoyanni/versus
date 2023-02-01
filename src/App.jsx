@@ -18,7 +18,7 @@ const weightClasses = [
   "Flyweight",
   "Bantamweight (W)",
   "Flyweight (W)",
-  "Strawwight",
+  "Strawweight",
 ];
 
 const defaultFighters = [
@@ -76,7 +76,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className="app bg">
       <Navbar />
       <Card fighters={selectedFighters} />
       <Versebar

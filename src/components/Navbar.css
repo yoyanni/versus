@@ -1,6 +1,5 @@
 nav {
-  color: #fff;
-  box-shadow: 0 0 15px #000;
+  margin-bottom: 2rem;
   font-weight: 700;
 }
 
@@ -9,31 +8,25 @@ nav {
 }
 
 .top-nav {
-  background-color: #000;
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1.5rem 1rem 1rem;
 }
 
-.title {
+.top-nav > span {
   margin-right: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
   letter-spacing: 0.1rem;
 }
 
 .bot-nav {
-  background-color: #1d1d1d;
   display: flex;
-  padding-inline-start: 1rem;
-  padding-inline-end: 3rem;
+  padding: 0.25rem 1.5rem 0.25rem 1rem;
 }
 
-.weightclass {
-  font-size: 14px;
+.bot-nav > span:nth-child(1) {
   margin-right: auto;
-  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.bot-nav > span:nth-child(2) {
   letter-spacing: 0.1rem;
 }

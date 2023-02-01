@@ -13,99 +13,130 @@ export default function StandUp({ red, blue }) {
   const blueAverage = Math.round((blueAcc / 10) * 10) / 10;
 
   return (
-    <div className="standup-info">
-      <div className="title-card">
-        <span className="red-standup">
+    <div className="standup-info shadow">
+      <div className="card-title heading-alt">
+        <span>
           {red.standUp} ({redAverage})
         </span>
-        <span>Stand-Up</span>
-        <span className="blue-standup">
+        <span className="heading">Stand-Up</span>
+        <span>
           ({blueAverage}) {blue.standUp}
         </span>
       </div>
-      <div className="standup">
-        <div className="red-fighter-standup">
-          <div>
-            <span>Punch Speed</span>
-            <span>{red.punchSpeed}</span>
+      <div className="stats">
+        <div className="stat-title sub-heading">Punch Speed</div>
+        <div className="stat content">
+          <div className={red.punchSpeed > blue.punchSpeed ? "red" : undefined}>
+            {red.punchSpeed}
           </div>
-          <div>
-            <span>Punch Power</span>
-            <span>{red.punchPower}</span>
-          </div>
-          <div>
-            <span>Accuracy</span>
-            <span>{red.accuracy}</span>
-          </div>
-          <div>
-            <span>Blocking</span>
-            <span>{red.blocking}</span>
-          </div>
-          <div>
-            <span>Head Movement</span>
-            <span>{red.headMovement}</span>
-          </div>
-          <div>
-            <span>Footwork</span>
-            <span>{red.footwork}</span>
-          </div>
-          <div>
-            <span>Switch Stance</span>
-            <span>{red.switchStance}</span>
-          </div>
-          <div>
-            <span>Takedown Def.</span>
-            <span>{red.takedownDefence}</span>
-          </div>
-          <div>
-            <span>Kick Power</span>
-            <span>{red.kickPower}</span>
-          </div>
-          <div>
-            <span>Kick Speed</span>
-            <span>{red.kickSpeed}</span>
+          <div
+            className={blue.punchSpeed > red.punchSpeed ? "blue" : undefined}
+          >
+            {blue.punchSpeed}
           </div>
         </div>
-        <div className="blue-fighter-standup">
-          <div>
-            <span>{blue.punchSpeed}</span>
-            <span>Punch Speed</span>
+        <div className="stat-title sub-heading">Punch Power</div>
+        <div className="stat content">
+          <div className={red.punchPower > blue.punchPower ? "red" : undefined}>
+            {red.punchPower}
           </div>
-          <div>
-            <span>{blue.punchPower}</span>
-            <span>Punch Power</span>
+
+          <div
+            className={blue.punchPower > red.punchPower ? "blue" : undefined}
+          >
+            {blue.punchPower}
           </div>
-          <div>
-            <span>{blue.accuracy}</span>
-            <span>Accuracy</span>
+        </div>
+        <div className="stat-title sub-heading">Accuracy</div>
+        <div className="stat content">
+          <div className={red.accuracy > blue.accuracy ? "red" : undefined}>
+            {red.accuracy}
           </div>
-          <div>
-            <span>{blue.blocking}</span>
-            <span>Blocking</span>
+          <div className={blue.accuracy > red.accuracy && "blue"}>
+            {blue.accuracy}
           </div>
-          <div>
-            <span>{blue.headMovement}</span>
-            <span>Head Movement</span>
+        </div>
+        <div className="stat-title sub-heading">Blocking</div>
+        <div className="stat content">
+          <div className={red.blocking > blue.blocking ? "red" : undefined}>
+            {red.blocking}
           </div>
-          <div>
-            <span>{blue.footwork}</span>
-            <span>Footwork</span>
+          <div className={blue.blocking > red.blocking ? "blue" : undefined}>
+            {blue.blocking}
           </div>
-          <div>
-            <span>{blue.switchStance}</span>
-            <span>Switch Stance</span>
+        </div>
+        <div className="stat-title sub-heading">Head Movement</div>
+        <div className="stat content">
+          <div
+            className={red.headMovement > blue.headMovement ? "red" : undefined}
+          >
+            {red.headMovement}
           </div>
-          <div>
-            <span>{blue.takedownDefence}</span>
-            <span>Takedown Def.</span>
+          <div
+            className={
+              blue.headMovement > red.headMovement ? "blue" : undefined
+            }
+          >
+            {blue.headMovement}
           </div>
-          <div>
-            <span>{blue.kickPower}</span>
-            <span>Kick Power</span>
+        </div>
+        <div className="stat-title sub-heading">Footwork</div>
+        <div className="stat content">
+          <div className={red.footwork > blue.footwork ? "red" : undefined}>
+            {red.footwork}
           </div>
-          <div>
-            <span>{blue.kickSpeed}</span>
-            <span>Kick Speed</span>
+          <div className={blue.footwork > red.footwork ? "blue" : undefined}>
+            {blue.footwork}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Switch Stance</div>
+        <div className="stat content">
+          <div
+            className={red.switchStance > blue.switchStance ? "red" : undefined}
+          >
+            {red.switchStance}
+          </div>
+          <div
+            className={
+              blue.switchStance > red.switchStance ? "blue" : undefined
+            }
+          >
+            {blue.switchStance}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Takedown Def.</div>
+        <div className="stat content">
+          <div
+            className={
+              red.takedownDefence > blue.takedownDefence ? "red" : undefined
+            }
+          >
+            {red.takedownDefence}
+          </div>
+          <div
+            className={
+              blue.takedownDefence > red.takedownDefence ? "blue" : undefined
+            }
+          >
+            {blue.takedownDefence}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Kick Power</div>
+        <div className="stat content">
+          <div className={red.kickPower > blue.kickPower ? "red" : undefined}>
+            {red.kickPower}
+          </div>
+          <div className={blue.kickPower > red.kickPower ? "blue" : undefined}>
+            {blue.kickPower}
+          </div>
+        </div>
+        <div className="stat-title sub-heading">Kick Speed</div>
+        <div className="stat content">
+          <div className={red.kickSpeed > blue.kickSpeed ? "red" : undefined}>
+            {red.kickSpeed}
+          </div>
+          <div className={blue.kickSpeed > red.kickSpeed ? "blue" : undefined}>
+            {blue.kickSpeed}
           </div>
         </div>
       </div>
