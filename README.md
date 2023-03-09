@@ -125,3 +125,11 @@ The data was also updated to include the rank of the top 15 fighters (in-game ra
 A tooltip was added to the perks, which is nice.
 
 Also the colours were added to understand the data easier.
+
+### Add Timer and WeightClass
+
+The Navbar now works and shows you what weightclass it actually is on the game AND how long is left.
+
+### Add Fighter selection option
+
+You are now able to choose between only the top 15 fighters or all of them in alphabetical order.
