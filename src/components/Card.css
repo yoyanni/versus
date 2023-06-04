@@ -1,8 +1,130 @@
-.all-cards {
+.cards__card {
+  background-color: var(--cardBgElevated);
+  border-block: var(--cardBorder);
+  box-shadow: var(--cardShadow);
+}
+
+.cards__card__title-container {
   /* Positioning */
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   /* Spacing */
-  padding-bottom: 12rem; /*This was added due to the health card being hidden by versebar*/
-  gap: 2em 0;
+  padding-block: 0.125rem;
+  /* Font Styling */
+  font-size: var(--titleFontSize);
+  color: var(--titleDarkFontColor);
 }
+
+/* Stats */
+.cards__card__title-container__level {
+  font-size: var(--primaryFontSize);
+}
+
+.cards__card__content__stat-title {
+  /* Positioning */
+  text-align: center;
+  /* Spacing */
+  padding-block: 0.125rem;
+  /* Font Styling */
+  color: var(--primaryDarkFontColor);
+  font-size: var(--primaryFontSize);
+  /* General Styling */
+  border-block: var(--cardBorder);
+}
+
+.cards__card__content__stat-pair {
+  display: flex;
+  color: var(--secondaryDarkFontColor);
+}
+
+.cards__card__content__stat-pair__stat,
+.cards__card__content__stat-pair__stat--redActive,
+.cards__card__content__stat-pair__stat--blueActive {
+  /* Positioning */
+  flex: 1;
+  text-align: center;
+  /* Spacing */
+  padding-block: 0.125rem;
+}
+
+.cards__card__content__stat-pair__stat--redActive {
+  background-color: var(--red);
+}
+
+.cards__card__content__stat-pair__stat--blueActive {
+  background-color: var(--blue);
+}
+
+.cards__card__content__stat-pair > div:nth-child(1) {
+  border-right: var(--cardBorder);
+}
+/* End Stats */
+
+/* Perks */
+.cards__card__content__perks {
+  display: flex;
+  color: var(--secondaryDarkFontColor);
+}
+
+/* Red-set needs border-right */
+.cards__card__content__perks__red-set {
+  border-right: var(--cardBorder);
+}
+
+.cards__card__content__perks__red-set,
+.cards__card__content__perks__blue-set {
+  flex: 1;
+  border-bottom: var(--cardBorder);
+}
+
+.cards__card__content__perks__red-set__perk,
+.cards__card__content__perks__blue-set__perk {
+  /* For Tooltip */
+  position: relative;
+  /* Positioning */
+  width: 100%;
+  /* Spacing */
+  padding-block: 0.25rem;
+  /* General Styling */
+  border-bottom: var(--cardBorder);
+  text-align: center;
+}
+
+.standup {
+  background-color: var(--standup);
+}
+
+.grappling {
+  background-color: var(--grappling);
+}
+
+.health {
+  background-color: var(--health);
+}
+
+.cards__card__content__perks__red-set__perk__tooltip,
+.cards__card__content__perks__blue-set__perk__tooltip {
+  /* Positioning */
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  /* Spacing */
+  width: 120px;
+  padding: 0.5rem;
+  color: #fff;
+  text-align: center;
+  /* General Styling */
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 6px;
+}
+
+.cards__card__content__perks__red-set__perk__tooltip {
+  left: 20%;
+}
+
+.cards__card__content__perks__blue-set__perk__tooltip {
+  right: 20%;
+}
+
+/* End Perks */

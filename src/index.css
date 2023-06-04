@@ -1,8 +1,37 @@
 /* My CSS */
-
 #root {
   font-family: "Inter";
   font-style: normal;
+}
+
+* {
+  /* Colors */
+  --navBg: #141414;
+  --navBgElevated: #1f1f1f;
+  --cardBg: #f6f6f6;
+  --cardBgElevated: #fff;
+  --red: #ff4d4f;
+  --blue: #4096ff;
+  --standup: #ff7a45;
+  --grappling: #1677ff;
+  --health: #389e0d;
+  /* Font */
+  --titleFontColor: rgba(255, 255, 255, 0.85);
+  --primaryFontColor: rgba(255, 255, 255, 0.65);
+  --titleDarkFontColor: rgba(0, 0, 0, 0.85);
+  --primaryDarkFontColor: rgba(0, 0, 0, 0.65);
+  --secondaryDarkFontColor: rgba(0, 0, 0, 0.45);
+  --tertiaryDarkFontColor: rgba(0, 0, 0, 0.25);
+  --borderDarkFontColor: rgba(0, 0, 0, 0.15);
+  --titleFontSize: 24px;
+  --primaryFontSize: 20px;
+  --secondaryFontSize: 16px;
+  --tertiaryFontSize: 14px;
+  --quaternaryFontSize: 12px;
+  /* General Styles */
+  --cardBorder: 1px solid rgba(0, 0, 0, 0.15);
+  --cardShadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  --verseBarShadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Resetting CSS */
@@ -16,6 +45,7 @@
   margin: 0;
   font-variant-numeric: tabular-nums;
 }
+
 html,
 body {
   height: 100%;

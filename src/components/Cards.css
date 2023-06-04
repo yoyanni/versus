@@ -1,0 +1,9 @@
+.cards {
+  /* Positioning */
+  display: flex;
+  flex-direction: column;
+  /* Spacing */
+  margin-top: 2rem;
+  padding-bottom: 149px; /* 117px height of versebar and 2rem (16*2=32px)*/
+  row-gap: 2rem;
+}

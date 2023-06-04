@@ -130,6 +130,12 @@ Also the colours were added to understand the data easier.
 
 The Navbar now works and shows you what weightclass it actually is on the game AND how long is left.
 
-### Add Fighter selection option
+### Refactor Code
 
-You are now able to choose between only the top 15 fighters or all of them in alphabetical order.
+The whole application went through another refactoring. Since I have a better understanding (again) after reading all the React Docs, I took advantage of React's concepts a bit better.
+
+What was done?
+
+- Removed redundant state
+- Bundled a few bits of code that was being repeated, created components and mapped through the data
+- CSS classes were cleaned up (using BEM)

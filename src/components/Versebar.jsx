@@ -6,57 +6,53 @@ import dropdownImg from "../assets/dropdown-white.png";
 
 export default function Versebar({
   weightClasses,
-  selectedWeight,
   weightFighters,
-  red,
-  blue,
-  changeFighters,
+  selectedData,
   changeWeight,
+  changeFighters,
 }) {
-  const [isWeightShown, setIsWeightShown] = useState(false);
-  const [areFightersShown, setAreFightersShown] = useState(false);
-  const [side, setSide] = useState("");
+  const [whichListShown, setWhichListShown] = useState(null);
 
-  // UI Weight
-  function toggleWeight() {
-    setIsWeightShown((prevState) => !prevState);
-    areFightersShown && setAreFightersShown((prevState) => !prevState);
+  // Show WeightClass List
+  function toggleWeightList() {
+    if (whichListShown === "WeightClass") setWhichListShown(null);
+    else setWhichListShown("WeightClass");
   }
 
-  //Close UI once chosen
-  function handleWeightClick(id) {
+  // Show Fighter List
+  function toggleFightersList(list) {
+    if (whichListShown === "red" || whichListShown === "blue")
+      setWhichListShown(null);
+    else setWhichListShown(list);
+  }
+
+  // Choose WeightClass
+  function handleWeightChange(id) {
     changeWeight(id);
-    setIsWeightShown((prevState) => !prevState);
+    setWhichListShown(null);
+  }
+
+  // Choose Fighter
+  function handleFighterChange(id, side) {
+    changeFighters(id, side);
+    setWhichListShown(null);
   }
 
   // Print list of Weight Classes
   const weightClassList = weightClasses.map((weight, index) => {
     return (
-      <div key={index} onClick={() => handleWeightClick(index)}>
+      <div key={index} onClick={() => handleWeightChange(index)}>
         {weight.toUpperCase()}
       </div>
     );
   });
-
-  // UI FIghters
-  function toggleFighters(e) {
-    setSide(e.target.id);
-    setAreFightersShown((prevState) => !prevState);
-    isWeightShown && setIsWeightShown((prevState) => !prevState);
-  }
-
-  //Close UI once chosen
-  function handleFighterClick(id, side) {
-    changeFighters(id, side);
-    setAreFightersShown((prevState) => !prevState);
-  }
 
   // Print list of Fighters
   const fighterList = weightFighters.map((fighter) => {
     return (
       <div
         key={fighter.id}
-        onClick={() => handleFighterClick(fighter.id, side)}
+        onClick={() => handleFighterChange(fighter.id, whichListShown)}
       >
         {fighter.firstName.toUpperCase() +
           (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
@@ -65,54 +61,40 @@ export default function Versebar({
     );
   });
 
+  const fighterSelection = ["red", "blue"].map((side, index) => {
+    return (
+      <div
+        key={index}
+        id={side}
+        className="versus__fighters__fighter"
+        onClick={() => toggleFightersList(side)}
+      >
+        <img className="versus__fighters__fighter__img" src={dropdownImg} />
+        <div className="versus__fighters__fighter__container">
+          <div className="versus__fighters__fighter__container__scroll">
+            {`${selectedData[side].firstName.toUpperCase()} ${
+              selectedData[side].nickname &&
+              `"${selectedData[side].nickname.toUpperCase()}" `
+            }${selectedData[side].lastName.toUpperCase()}`}
+          </div>
+        </div>
+      </div>
+    );
+  });
+
   return (
-    <div className="versus shadow-up">
-      <div
-        className={
-          isWeightShown
-            ? "dropdown bg-elevated sub-title shown"
-            : "dropdown hidden"
-        }
-      >
-        {weightClassList}
+    <div className="versus">
+      {whichListShown === "WeightClass" && (
+        <div className="versus__weight-pickup">{weightClassList}</div>
+      )}
+      <div className="versus__weightclass" onClick={toggleWeightList}>
+        <span>{selectedData.weightClass.toUpperCase()}</span>
+        <img className="versus__weightclass__img" src={dropdownImg} />
       </div>
-
-      <div className="weightclass-container bg-elevated sub-title">
-        <span className="weight" onClick={toggleWeight}>
-          {selectedWeight.toUpperCase()}
-        </span>
-        <img src={dropdownImg} />
-      </div>
-
-      <div
-        className={
-          areFightersShown
-            ? "dropdown bg-container sub-title shown"
-            : "dropdown hidden"
-        }
-      >
-        {fighterList}
-      </div>
-
-      <div className="fighter-container bg-container title">
-        <div className="fighter-select" onClick={toggleFighters}>
-          <img src={dropdownImg} />
-          <div className="scroll-container">
-            <div id="red" className="red-fighter scroll">
-              {`${red.firstName.toUpperCase()} "${red.nickname.toUpperCase()}" ${red.lastName.toUpperCase()}`}
-            </div>
-          </div>
-        </div>
-
-        <div className="fighter-select" onClick={toggleFighters}>
-          <img src={dropdownImg} />
-          <div className="scroll-container">
-            <div id="blue" className="blue-fighter scroll">
-              {`${blue.firstName.toUpperCase()} "${blue.nickname.toUpperCase()}" ${blue.lastName.toUpperCase()}`}
-            </div>
-          </div>
-        </div>
-      </div>
+      {(whichListShown === "red" || whichListShown === "blue") && (
+        <div className="versus__fighter-pickup">{fighterList}</div>
+      )}
+      <div className="versus__fighters">{fighterSelection}</div>
     </div>
   );
 }

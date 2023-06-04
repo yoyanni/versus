@@ -1,94 +1,88 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Versebar from "./components/Versebar";
-import Card from "./components/Card";
+import Cards from "./components/Cards";
 
 import data from "./data.js";
 
 import "./App.css";
 
 const weightClasses = [
-  "Heavyweight",
-  "Light Heavyweight",
-  "Middleweight",
-  "Welterweight",
-  "Lightweight",
-  "Featherweight",
-  "Bantamweight",
-  "Flyweight",
-  "Bantamweight (W)",
-  "Flyweight (W)",
   "Strawweight",
+  "Flyweight (W)",
+  "Bantamweight (W)",
+  "Flyweight",
+  "Bantamweight",
+  "Featherweight",
+  "Lightweight",
+  "Welterweight",
+  "Middleweight",
+  "Light Heavyweight",
+  "Heavyweight",
 ];
 
 const defaultFighters = [
-  { red: 341, blue: 342 },
-  { red: 14, blue: 10 },
-  { red: 34, blue: 30 },
-  { red: 48, blue: 39 },
-  { red: 63, blue: 66 },
-  { red: 98, blue: 71 },
-  { red: 133, blue: 112 },
-  { red: 175, blue: 166 },
-  { red: 227, blue: 185 },
-  { red: 231, blue: 239 },
-  { red: 283, blue: 276 },
-  { red: 313, blue: 326 },
+  { red: 10, blue: 14 },
+  { red: 37, blue: 32 },
+  { red: 55, blue: 60 },
+  { red: 71, blue: 74 },
+  { red: 85, blue: 87 },
+  { red: 133, blue: 111 },
+  { red: 189, blue: 180 },
+  { red: 245, blue: 227 },
+  { red: 295, blue: 255 },
+  { red: 312, blue: 305 },
+  { red: 360, blue: 350 },
 ];
 
-//Placeholders
+const initialState = { weightClass: 5, red: 133, blue: 111 };
 
 function App() {
-  // seems like both states will reside in the App component because both are needed here
-  const [weightClassId, setWeightClassId] = useState(6);
-  const [fighterId, setFighterId] = useState({
-    red: 133,
-    blue: 112,
-  });
+  const [selectedIds, setSelectedIds] = useState(initialState);
 
-  const selectedWeight = weightClasses[weightClassId];
-  const selectedFighters = {
-    red: data.find((red) => red.id == fighterId.red),
-    blue: data.find((blue) => blue.id == fighterId.blue),
+  const selectedData = {
+    weightClass: weightClasses[selectedIds.weightClass],
+    red: data.find((fighter) => fighter.id == selectedIds.red),
+    blue: data.find((fighter) => fighter.id == selectedIds.blue),
   };
 
   // Looks up Fighters filtered by weightClass State
   const weightFighters = data.filter((fighter) => {
     return (
-      fighter.weightClass.toLowerCase() == selectedWeight.toLowerCase() ||
+      fighter.weightClass.toLowerCase() ==
+        selectedData.weightClass.toLowerCase() ||
       fighter.weightClass.toLowerCase() == "generic"
     );
   });
 
   // Changes the weightClass State
   function changeWeight(id) {
-    if (weightClassId == id) {
-      return;
-    }
-
-    setWeightClassId(id);
-    setFighterId(defaultFighters[id]);
+    if (selectedIds.weightClass === id) return;
+    setSelectedIds({
+      weightClass: id,
+      red: defaultFighters[id].red,
+      blue: defaultFighters[id].blue,
+    });
   }
 
   // Changes the fighters State
   function changeFighters(id, side) {
-    setFighterId((prevState) => ({ ...prevState, [side]: id }));
+    if (selectedIds[side] === id) return;
+    setSelectedIds((prevState) => ({ ...prevState, [side]: id }));
   }
 
   return (
-    <div className="app bg">
+    <>
       <Navbar />
-      <Card fighters={selectedFighters} />
+      <Cards red={selectedData.red} blue={selectedData.blue} />
       <Versebar
         weightClasses={weightClasses}
-        selectedWeight={selectedWeight}
         weightFighters={weightFighters}
-        red={selectedFighters.red}
-        blue={selectedFighters.blue}
-        changeFighters={changeFighters}
+        selectedData={selectedData}
         changeWeight={changeWeight}
+        changeFighters={changeFighters}
       />
-    </div>
+    </>
   );
 }
 
