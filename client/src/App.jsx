@@ -40,6 +40,18 @@ const initialState = { weightClass: 5, red: 133, blue: 111 };
 function App() {
   const [selectedIds, setSelectedIds] = useState(initialState);
 
+  async function handleFetch() {
+    try {
+      fetch("http://192.168.1.53:5000")
+        .then((res) => res.text())
+        .then((data) => console.log(data));
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  handleFetch();
+
   const selectedData = {
     weightClass: weightClasses[selectedIds.weightClass],
     red: data.find((fighter) => fighter.id == selectedIds.red),
