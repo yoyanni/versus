@@ -51,8 +51,8 @@ export default function Versebar({
   const fighterList = weightFighters.map((fighter) => {
     return (
       <div
-        key={fighter.id}
-        onClick={() => handleFighterChange(fighter.id, whichListShown)}
+        key={fighter._id}
+        onClick={() => handleFighterChange(fighter._id, whichListShown)}
       >
         {fighter.firstName.toUpperCase() +
           (fighter.nickname ? ` "${fighter.nickname.toUpperCase()}" ` : " ") +
@@ -65,7 +65,6 @@ export default function Versebar({
     return (
       <div
         key={index}
-        id={side}
         className="versus__fighters__fighter"
         onClick={() => toggleFightersList(side)}
       >

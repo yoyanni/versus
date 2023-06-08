@@ -144,3 +144,15 @@ What was done?
 ### Set the Server up
 
 The structure of the site was altered to house the server and was also setup for basic use. 
+
+### Add the Database and Connect
+
+Backend: 
+
+The database was connected, the Model/Schema was created for the table of fighters.
+
+From the database side, a few fighters were added for testing purposes. 
+
+Frontend:
+
+Fetch function was added to test the Model/Schema of the fighters table and that everything was working as intented.

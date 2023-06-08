@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Versebar from "./components/Versebar";
 import Cards from "./components/Cards";
-
-import data from "./data.js";
 
 import "./App.css";
 
@@ -35,35 +33,35 @@ const defaultFighters = [
   { red: 360, blue: 350 },
 ];
 
-const initialState = { weightClass: 5, red: 133, blue: 111 };
+// const initialState = { weightClass: 5, red: 133, blue: 111 };
+const initialState = { weightClass: 0, red: 1, blue: 3 };
 
 function App() {
   const [selectedIds, setSelectedIds] = useState(initialState);
-
-  async function handleFetch() {
-    try {
-      fetch("http://192.168.1.53:5000")
-        .then((res) => res.text())
-        .then((data) => console.log(data));
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  handleFetch();
-
+  const [fighters, setFighters] = useState([]);
+  
+  useEffect(() => {
+    function fetchData() {
+      return fetch("http://192.168.1.53:5000/fighters")
+        .then((res) => res.json())
+        .then((data) => setFighters(data))
+        .catch((err) => console.log(err));
+      }
+      fetchData();
+    }, []);
+    
   const selectedData = {
     weightClass: weightClasses[selectedIds.weightClass],
-    red: data.find((fighter) => fighter.id == selectedIds.red),
-    blue: data.find((fighter) => fighter.id == selectedIds.blue),
+    red: fighters.find((fighter) => fighter._id == selectedIds.red),
+    blue: fighters.find((fighter) => fighter._id == selectedIds.blue),
   };
 
+
   // Looks up Fighters filtered by weightClass State
-  const weightFighters = data.filter((fighter) => {
+  const weightFighters = fighters.filter((fighter) => {
     return (
-      fighter.weightClass.toLowerCase() ==
-        selectedData.weightClass.toLowerCase() ||
-      fighter.weightClass.toLowerCase() == "generic"
+      fighter.weightClass == selectedData.weightClass ||
+      fighter.weightClass == "Generic"
     );
   });
 
@@ -79,6 +77,8 @@ function App() {
 
   // Changes the fighters State
   function changeFighters(id, side) {
+    console.log(id);
+    console.log(side);
     if (selectedIds[side] === id) return;
     setSelectedIds((prevState) => ({ ...prevState, [side]: id }));
   }
@@ -86,14 +86,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <Cards red={selectedData.red} blue={selectedData.blue} />
-      <Versebar
-        weightClasses={weightClasses}
-        weightFighters={weightFighters}
-        selectedData={selectedData}
-        changeWeight={changeWeight}
-        changeFighters={changeFighters}
-      />
+      {fighters.length !== 0 && (
+        <>
+          <Cards red={selectedData.red} blue={selectedData.blue} />
+          <Versebar
+            weightClasses={weightClasses}
+            weightFighters={weightFighters}
+            selectedData={selectedData}
+            changeWeight={changeWeight}
+            changeFighters={changeFighters}
+          />
+        </>
+      )}
     </>
   );
 }
