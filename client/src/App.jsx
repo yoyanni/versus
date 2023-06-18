@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import Form from "./components/Form";
 import Versebar from "./components/Versebar";
 import Cards from "./components/Cards";
 
@@ -36,26 +37,25 @@ const defaultFighters = [
 // const initialState = { weightClass: 5, red: 133, blue: 111 };
 const initialState = { weightClass: 0, red: 1, blue: 3 };
 
-function App() {
+export default function App() {
   const [selectedIds, setSelectedIds] = useState(initialState);
   const [fighters, setFighters] = useState([]);
-  
+
   useEffect(() => {
     function fetchData() {
       return fetch("http://192.168.1.53:5000/fighters")
         .then((res) => res.json())
         .then((data) => setFighters(data))
         .catch((err) => console.log(err));
-      }
-      fetchData();
-    }, []);
-    
+    }
+    fetchData();
+  }, []);
+
   const selectedData = {
     weightClass: weightClasses[selectedIds.weightClass],
     red: fighters.find((fighter) => fighter._id == selectedIds.red),
     blue: fighters.find((fighter) => fighter._id == selectedIds.blue),
   };
-
 
   // Looks up Fighters filtered by weightClass State
   const weightFighters = fighters.filter((fighter) => {
@@ -86,7 +86,8 @@ function App() {
   return (
     <>
       <Navbar />
-      {fighters.length !== 0 && (
+      <Form />
+      {/* {fighters.length !== 0 && (
         <>
           <Cards red={selectedData.red} blue={selectedData.blue} />
           <Versebar
@@ -97,9 +98,7 @@ function App() {
             changeFighters={changeFighters}
           />
         </>
-      )}
+      )} */}
     </>
   );
 }
-
-export default App;

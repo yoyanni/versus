@@ -156,3 +156,18 @@ From the database side, a few fighters were added for testing purposes.
 Frontend:
 
 Fetch function was added to test the Model/Schema of the fighters table and that everything was working as intented.
+
+### Add CRUD operations - Create
+
+A general shape of the CRUD operations were added to the back-end but the create operation was focused on.
+
+A form was created in the front end which proved to be quite challenging. I needed to think about how my data was structed, how would that translate to UI and the accessing and manipulation of the data inputed to fit the data structure in the back-end.
+
+In the back-end I added a few details that were missing, like parsing the body to json and looking up the latest id in the db and adding it to the new fighter. 
+
+**Note:** I realised my data structure might not have the best design while going through the above. I decided to go through it anyways as it currently was, achieve the functionality that I was aiming and then to restructor/refactor the code.
+
+### Restructor data / Refactor code
+
+### Add CRUD operations - Update
+### Add CRUD operations - Delete

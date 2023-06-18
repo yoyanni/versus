@@ -1,32 +1,38 @@
-//Imports
+// Imports
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const mongoose = require("mongoose");
 
-//Local Import
-const Fighter = require("./fighter");
+// Local Import
+const Controller = require("./controller");
 const initialiseMongoose = require("./mongoose-config");
 initialiseMongoose(mongoose, process.env.DATABASE_URL);
 
-//Middleware
+// Middleware
 const app = express();
 app.use(cors());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
+// Routes
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
-app.get("/fighters", async (req, res) => {
-  try {
-    const fighters = await Fighter.find();
-    res.json(fighters);
-  } catch (err) {
-    console.log(err);
-  }
-});
+// Create
+app.post("/fighters", Controller.createFighter);
+
+// Read
+app.get("/fighters", Controller.getAllFighters);
+app.get("/fighters/:id", Controller.getFighterById);
+
+// Update
+app.put("/fighters/:id", Controller.updateFighterById);
+
+// Delete
+app.delete("/fighters/:id", Controller.deleteFighterById);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
