@@ -16,20 +16,7 @@ export default function Card({ title, skills, red, blue }) {
   let content;
   // Goes through each skill in each type (Stand-Up, Grappling, Health)
   // then finds the level of that skill for both red and blue
-  if (title !== "Perks") {
-    content = skills.map((skill, index) => {
-      const redSkill = red.skills.find((sk) => sk.name === skill);
-      const blueSkill = blue.skills.find((sk) => sk.name === skill);
-      return (
-        <Skill
-          key={index}
-          skillName={skill}
-          redLevel={redSkill.level}
-          blueLevel={blueSkill.level}
-        />
-      );
-    });
-  } else {
+  if (title === "Perks") {
     let colorClass;
     const redPerks = red.map((perk, index) => {
       if (perk.type === "Stand-Up") colorClass = "standup";
@@ -77,6 +64,19 @@ export default function Card({ title, skills, red, blue }) {
         <div className="cards__card__content__perks__blue-set">{bluePerks}</div>
       </div>
     );
+  } else {
+    content = skills.map((skill, index) => {
+      const redSkill = red.skills[skill.propName];
+      const blueSkill = blue.skills[skill.propName];
+      return (
+        <Skill
+          key={index}
+          skillName={skill.name}
+          redLevel={redSkill}
+          blueLevel={blueSkill}
+        />
+      );
+    });
   }
 
   return (
@@ -91,15 +91,17 @@ function Container({ children, title, red, blue }) {
   let blueAverage;
   // Reducers for Average Skill level
   if (title !== "Perks") {
-    const redSum = red.skills.reduce((acc, cur) => {
-      return acc + cur.level;
+    const redSkillLevels = Object.values(red.skills);
+    const blueSkillLevels = Object.values(blue.skills);
+    const redSum = redSkillLevels.reduce((acc, cur) => {
+      return acc + cur;
     }, 0);
-    const blueSum = blue.skills.reduce((acc, cur) => {
-      return acc + cur.level;
+    const blueSum = blueSkillLevels.reduce((acc, cur) => {
+      return acc + cur;
     }, 0);
 
-    redAverage = Math.round((redSum / red.skills.length) * 10) / 10;
-    blueAverage = Math.round((blueSum / blue.skills.length) * 10) / 10;
+    redAverage = Math.round((redSum / redSkillLevels.length) * 10) / 10;
+    blueAverage = Math.round((blueSum / blueSkillLevels.length) * 10) / 10;
   }
 
   return (

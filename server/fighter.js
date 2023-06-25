@@ -7,7 +7,7 @@ const fighterSchema = new mongoose.Schema({
     require: true,
   },
   rank: {
-    type: Number,
+    type: String,
     require: true,
   },
   firstName: {
@@ -27,18 +27,20 @@ const fighterSchema = new mongoose.Schema({
       type: Number,
       require: true,
     },
-    skills: [
-      {
-        name: {
-          type: String,
-          require: true,
-        },
-        level: {
-          type: mongoose.Schema.Types.Mixed,
-          require: true,
-        },
+    skills: {
+      martialArt: {
+        type: String,
+        require: true,
       },
-    ],
+      stance: {
+        type: String,
+        require: true,
+      },
+      reach: {
+        type: Number,
+        require: true,
+      },
+    },
   },
   perks: [
     {
@@ -61,64 +63,116 @@ const fighterSchema = new mongoose.Schema({
       type: Number,
       require: true,
     },
-    skills: [
-      {
-        name: {
-          type: String,
-          require: true,
-        },
-        level: {
-          type: Number,
-          require: true,
-        },
+    skills: {
+      punchSpeed: {
+        type: Number,
+        require: true,
       },
-    ],
+      punchPower: {
+        type: Number,
+        require: true,
+      },
+      accuracy: {
+        type: Number,
+        require: true,
+      },
+      blocking: {
+        type: Number,
+        require: true,
+      },
+      headMovement: {
+        type: Number,
+        require: true,
+      },
+      footwork: {
+        type: Number,
+        require: true,
+      },
+      switchStance: {
+        type: Number,
+        require: true,
+      },
+      takedownDefence: {
+        type: Number,
+        require: true,
+      },
+      kickPower: {
+        type: Number,
+        require: true,
+      },
+      kickSpeed: {
+        type: Number,
+        require: true,
+      },
+    },
   },
   grappling: {
     level: {
       type: Number,
       require: true,
     },
-    skills: [
-      {
-        name: {
-          type: String,
-          require: true,
-        },
-        level: {
-          type: Number,
-          require: true,
-        },
+    skills: {
+      takedowns: {
+        type: Number,
+        require: true,
       },
-    ],
+      topControl: {
+        type: Number,
+        require: true,
+      },
+      bottomControl: {
+        type: Number,
+        require: true,
+      },
+      submissions: {
+        type: Number,
+        require: true,
+      },
+      submissionDefence: {
+        type: Number,
+        require: true,
+      },
+      groundStriking: {
+        type: Number,
+        require: true,
+      },
+      clinchStriking: {
+        type: Number,
+        require: true,
+      },
+      clinchControl: {
+        type: Number,
+        require: true,
+      },
+    },
   },
   health: {
     level: {
       type: Number,
       require: true,
     },
-    skills: [
-      {
-        name: {
-          type: String,
-          require: true,
-        },
-        level: {
-          type: Number,
-          require: true,
-        },
+    skills: {
+      cardio: {
+        type: Number,
+        require: true,
       },
-      {
-        name: {
-          type: String,
-          require: true,
-        },
-        level: {
-          type: Number,
-          require: true,
-        },
+      chin: {
+        type: Number,
+        require: true,
       },
-    ],
+      body: {
+        type: Number,
+        require: true,
+      },
+      legs: {
+        type: Number,
+        require: true,
+      },
+      recovery: {
+        type: Number,
+        require: true,
+      },
+    },
   },
   moves: {
     punches: [

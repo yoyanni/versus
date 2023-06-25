@@ -169,5 +169,11 @@ In the back-end I added a few details that were missing, like parsing the body t
 
 ### Restructor data / Refactor code
 
+Data structure in the database has been altered to a more efficient structure. Due to the data structure changes, the way the frontend consumed that data and the form needed to be changed.
+
+Not only was the data structure of the database altered but also the state structure of a fighter to align with best practises when having to update deeply nested state properties (keeping the state flat).
+
+After going through a couple versions to see what best fitted, I comprised between keeping the fighter object (state) flat and having some depth. This way the state isnt too verbose due to the object being completly flat and not having to copy all the objects/arrays down a few levels when updating state.
+
 ### Add CRUD operations - Update
 ### Add CRUD operations - Delete

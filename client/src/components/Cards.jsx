@@ -1,38 +1,13 @@
 import Card from "./Card";
-import "./Cards.css";
+import standard from "../standardInfo";
 
-const skillList = {
-  standUp: [
-    "Punch Speed",
-    "Punch Power",
-    "Accuracy",
-    "Blocking",
-    "Head Movement",
-    "Footwork",
-    "Switch Stance",
-    "Takedown Defence",
-    "Kick Power",
-    "Kick Speed",
-  ],
-  grappling: [
-    "Takedown",
-    "Top Control",
-    "Bottom Control",
-    "Submission",
-    "Submission Defence",
-    "Ground Striking",
-    "Clinch Striking",
-    "Clinch Control",
-  ],
-  health: ["Cardio", "Chin", "Body", "Legs", "Recovery"],
-  basic: ["Martial Arts", "Stance", "Reach"],
-};
+import "./Cards.css";
 
 const cardsList = [
   {
     title: "Fighter Info",
     type: "basic",
-    skills: skillList.basic,
+    skills: standard.basic,
   },
   {
     title: "Perks",
@@ -42,17 +17,17 @@ const cardsList = [
   {
     title: "Stand-Up",
     type: "standUp",
-    skills: skillList.standUp,
+    skills: standard.standUp,
   },
   {
     title: "Grappling",
     type: "grappling",
-    skills: skillList.grappling,
+    skills: standard.grappling,
   },
   {
     title: "Health",
     type: "health",
-    skills: skillList.health,
+    skills: standard.health,
   },
 ];
 
