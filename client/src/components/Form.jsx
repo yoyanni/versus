@@ -231,7 +231,7 @@ const moveKeys = [
   "combos",
 ];
 
-export default function Forms() {
+export default function Form() {
   const [formData, setFormData] = useState(initialFormData);
 
   // Update formData
@@ -303,7 +303,6 @@ export default function Forms() {
   }
 
   // Remove Move from formData
-  // function handleMoveRemoval(e, typeOfMove, move, groundMove = null) {
   function handleMoveRemoval(e, typeOfMove, move) {
     e.preventDefault();
     const filteredMoves = formData[typeOfMove].filter(

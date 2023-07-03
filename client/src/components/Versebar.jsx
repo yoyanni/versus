@@ -1,11 +1,11 @@
 import { useState } from "react";
 
+import standard from "../standardInfo.js";
 import "./Versebar.css";
 
 import dropdownImg from "../assets/dropdown-white.png";
 
 export default function Versebar({
-  weightClasses,
   weightFighters,
   selectedData,
   changeWeight,
@@ -39,7 +39,7 @@ export default function Versebar({
   }
 
   // Print list of Weight Classes
-  const weightClassList = weightClasses.map((weight, index) => {
+  const weightClassList = standard.weightClasses.map((weight, index) => {
     return (
       <div key={index} onClick={() => handleWeightChange(index)}>
         {weight.toUpperCase()}

@@ -397,6 +397,19 @@ const standard = {
     ],
     combos: ["Boxing", "Kickboxing", "Muay Thai", "Traditional"],
   },
+  defaultFighters: [
+    { red: 10, blue: 14 },
+    { red: 37, blue: 32 },
+    { red: 55, blue: 60 },
+    { red: 71, blue: 74 },
+    { red: 85, blue: 87 },
+    { red: 133, blue: 111 },
+    { red: 189, blue: 180 },
+    { red: 245, blue: 227 },
+    { red: 295, blue: 255 },
+    { red: 312, blue: 305 },
+    { red: 360, blue: 350 },
+  ],
 };
 
 export default standard;

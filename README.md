@@ -175,5 +175,18 @@ Not only was the data structure of the database altered but also the state struc
 
 After going through a couple versions to see what best fitted, I comprised between keeping the fighter object (state) flat and having some depth. This way the state isnt too verbose due to the object being completly flat and not having to copy all the objects/arrays down a few levels when updating state.
 
+### Add Client-side Routing
+
+Added React router to be able to navigate to a page since from here on out we will need each action roughly on a new page.
+
+Also added defaultFighters
+
+### Add CRUD operations - Read
+
+
+
 ### Add CRUD operations - Update
+
+
+
 ### Add CRUD operations - Delete
