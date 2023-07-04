@@ -248,6 +248,12 @@ const fighterSchema = new mongoose.Schema({
           level: Number,
         },
       ],
+      strikes: [
+        {
+          name: String,
+          level: Number,
+        },
+      ],
     },
     submissions: [
       {

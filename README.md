@@ -80,7 +80,7 @@ I also added the ids to each fighter to be able to select the correct one in the
 
 Weight and Fighters States can now be updated. I had to add a side state in Versebar which helps determine which side (red or blue) I will be updating for the Fighters State. I was not sure if this was the best method as it seemed a bit more convoluted but at the moment it makes a bit more sense, it helps by re-using the same code (if I had split the Fighters State into two, I would have to split everything I do believe) and it helps by being able to pass both fighters with one state to another component.
 
-When the Weight State is updated the Fighters State gets reset, it checks thought if the Weight State is the same. If it is then it wont update and wont reset the Fighters State. 
+When the Weight State is updated the Fighters State gets reset, it checks thought if the Weight State is the same. If it is then it wont update and wont reset the Fighters State.
 
 I also removed nanoid, thought it was required but I used the indices.
 
@@ -88,9 +88,10 @@ I also removed nanoid, thought it was required but I used the indices.
 
 The recovery stat in Health was missing, also a few details were cleaned up.
 
-### Update Stats in Card Component 
+### Update Stats in Card Component
 
 Update the below files:
+
 - App
   - Added initial Fighters
   - Removed the resetting of Fighter State as it would crash the app. (it will need to be updated later)
@@ -100,9 +101,10 @@ Update the below files:
   - All received props, mainly the red and blue fighters.
   - Used .reduce() to locate the average stat for each specific card
 - Versebar
- - Updated names according to Fighter State that was passed down.
+- Updated names according to Fighter State that was passed down.
 
-**Note:** 
+**Note:**
+
 - .reduce() will use the accumilator as the initial value if you do not provide one after the callback function
 - At the moment the fighters will remain the same when changing Weight State, as mentioned previously, that is because the weight state is required but it wont have the most updated version. It will have the previous version still. Have to figure out how to fix that.
 
@@ -110,7 +112,7 @@ Update the below files:
 
 Re-wrote code with a bit of a better understanding of React due have a quick read through React Docs (Beta).
 
-Resolved the previous issue with the fighters by having a set of default fighters for each weight class. 
+Resolved the previous issue with the fighters by having a set of default fighters for each weight class.
 
 The Generic WeightClass always loads with all the other Weight Classes.
 
@@ -140,18 +142,17 @@ What was done?
 - Bundled a few bits of code that was being repeated, created components and mapped through the data
 - CSS classes were cleaned up (using BEM)
 
-
 ### Set the Server up
 
-The structure of the site was altered to house the server and was also setup for basic use. 
+The structure of the site was altered to house the server and was also setup for basic use.
 
 ### Add the Database and Connect
 
-Backend: 
+Backend:
 
 The database was connected, the Model/Schema was created for the table of fighters.
 
-From the database side, a few fighters were added for testing purposes. 
+From the database side, a few fighters were added for testing purposes.
 
 Frontend:
 
@@ -163,7 +164,7 @@ A general shape of the CRUD operations were added to the back-end but the create
 
 A form was created in the front end which proved to be quite challenging. I needed to think about how my data was structed, how would that translate to UI and the accessing and manipulation of the data inputed to fit the data structure in the back-end.
 
-In the back-end I added a few details that were missing, like parsing the body to json and looking up the latest id in the db and adding it to the new fighter. 
+In the back-end I added a few details that were missing, like parsing the body to json and looking up the latest id in the db and adding it to the new fighter.
 
 **Note:** I realised my data structure might not have the best design while going through the above. I decided to go through it anyways as it currently was, achieve the functionality that I was aiming and then to restructor/refactor the code.
 
@@ -179,14 +180,21 @@ After going through a couple versions to see what best fitted, I comprised betwe
 
 Added React router to be able to navigate to a page since from here on out we will need each action roughly on a new page.
 
-Also added defaultFighters
+Also added defaultFighters to standardInfo.js
 
 ### Add CRUD operations - Read
 
+New stuff that was added:
 
+- You can now display all the fighters per category
+- You can now display a single fighter and their moves (for now?)
+- Fighters (state) was lifted to accomodate for the new routes.
+- It will display the fighter you just created.
+
+Bugs:
+
+- The model in the backend was missing the ground strikes
 
 ### Add CRUD operations - Update
-
-
 
 ### Add CRUD operations - Delete

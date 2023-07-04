@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import standard from "../standardInfo.js";
 
@@ -217,23 +218,9 @@ const sections = [
   },
 ];
 
-const moveKeys = [
-  "punches",
-  "kicks",
-  "clinch",
-  "takedowns",
-  "getups",
-  "transitions",
-  "reversals",
-  "sweeps",
-  "strikes",
-  "submissions",
-  "combos",
-];
-
-export default function Form() {
+export default function Form({ setFighters }) {
   const [formData, setFormData] = useState(initialFormData);
-
+  const navigate = useNavigate();
   // Update formData
   function handleFormChange(e, parentKey) {
     const { name, value, selectedOptions } = e.target;
@@ -321,7 +308,7 @@ export default function Form() {
 
     const url = "http://192.168.1.53:5000/fighters";
 
-    const hasMoves = moveKeys.every((key) => {
+    const hasMoves = standard.moveKeys.every((key) => {
       return formData[key].length !== 0;
     });
 
@@ -382,8 +369,9 @@ export default function Form() {
           return response.json();
         })
         .then((responseData) => {
-          console.log("Successfully added to the db");
-          setFormData(initialFormData);
+          setFighters((prevValue) => [...prevValue, responseData]);
+          navigate(`/fighters/${responseData._id}`);
+          alert("Successfully added!");
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -561,7 +549,7 @@ export default function Form() {
   });
 
   // Display Moves
-  const movesJSX = moveKeys.map((key, keyIndex) => {
+  const movesJSX = standard.moveKeys.map((key, keyIndex) => {
     const typeOfMove = formData[key];
     const title = key[0].toUpperCase() + key.slice(1);
     const jsx = typeOfMove.map((move, index) => {

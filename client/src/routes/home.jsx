@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Versebar from "../components/Versebar";
 import Cards from "../components/Cards";
 import standard from "../standardInfo.js";
@@ -10,19 +10,8 @@ const initialState = {
   blue: standard.defaultFighters[0].blue,
 };
 
-export default function Home() {
+export default function Home({ fighters }) {
   const [selectedIds, setSelectedIds] = useState(initialState);
-  const [fighters, setFighters] = useState([]);
-
-  useEffect(() => {
-    function fetchData() {
-      return fetch("http://192.168.1.53:5000/fighters")
-        .then((res) => res.json())
-        .then((data) => setFighters(data))
-        .catch((err) => console.log(err));
-    }
-    fetchData();
-  }, []);
 
   const selectedData = {
     weightClass: standard.weightClasses[selectedIds.weightClass],
