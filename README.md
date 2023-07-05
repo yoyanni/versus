@@ -204,3 +204,5 @@ Also the controller was modified, it now brings back the whole fighter list in t
 A "Not found" page was added in the fighter route.
 
 ### Add CRUD operations - Delete
+
+You can now delete an existing fighter, also all urls for the back were prefixed with "/api" to accomodate for best practises.

@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect(() => {
     function fetchData() {
-      return fetch("http://192.168.1.53:5000/fighters")
+      return fetch("http://192.168.1.53:5000/api/fighters")
         .then((res) => res.json())
         .then((data) => setFighters(data))
         .catch((err) => console.log(err));
@@ -42,7 +42,11 @@ export default function App() {
         <Route
           path="/fighters/:id"
           element={
-            fighters.length ? <Fighter fighters={fighters} /> : <Loading />
+            fighters.length ? (
+              <Fighter fighters={fighters} setFighters={setFighters} />
+            ) : (
+              <Loading />
+            )
           }
         />
         <Route

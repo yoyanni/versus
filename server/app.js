@@ -22,17 +22,17 @@ app.get("/", function (req, res) {
 });
 
 // Create
-app.post("/fighters", Controller.createFighter);
+app.post("/api/fighters", Controller.createFighter);
 
 // Read
-app.get("/fighters", Controller.getAllFighters);
-app.get("/fighters/:id", Controller.getFighterById);
+app.get("/api/fighters", Controller.getAllFighters);
+app.get("/api/fighters/:id", Controller.getFighterById);
 
 // Update
-app.put("/fighters/:id", Controller.updateFighterById);
+app.put("/api/fighters/:id", Controller.updateFighterById);
 
 // Delete
-app.delete("/fighters/:id", Controller.deleteFighterById);
+app.delete("/api/fighters/:id", Controller.deleteFighterById);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -63,7 +63,8 @@ exports.deleteFighterById = async (req, res) => {
     if (!deletedFighter) {
       return res.status(404).json({ error: "Fighter not found." });
     }
-    res.json(deletedFighter);
+    const fighters = await Fighter.find();
+    res.json(fighters);
   } catch (err) {
     res.status(500).json({ error: "Failed to delete fighter." });
   }

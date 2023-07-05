@@ -398,8 +398,8 @@ export default function Form({ fighters = null, setFighters }) {
     e.preventDefault();
 
     const url = id
-      ? `http://192.168.1.53:5000/fighters/${id}`
-      : "http://192.168.1.53:5000/fighters";
+      ? `http://192.168.1.53:5000/api/fighters/${id}`
+      : "http://192.168.1.53:5000/api/fighters";
 
     const hasMoves = standard.moveKeys.every((key) => {
       return formData[key].length !== 0;
