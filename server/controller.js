@@ -6,8 +6,9 @@ exports.createFighter = async (req, res) => {
   try {
     const lastId = await Fighter.findOne({}, "id").sort({ _id: -1 });
     req.body._id = ++lastId.id;
-    const newFighter = await Fighter.create(req.body);
-    res.status(201).json(newFighter);
+    await Fighter.create(req.body);
+    const fighters = await Fighter.find()
+    res.status(201).json(fighters);
   } catch (err) {
     res.status(500).json({ error: "Failed to create fighter." });
   }
@@ -48,7 +49,8 @@ exports.updateFighterById = async (req, res) => {
     if (!updatedFighter) {
       return res.status(404).json({ error: "Fighter not found." });
     }
-    res.json(updatedFighter);
+    const fighters = await Fighter.find();
+    res.json(fighters);
   } catch (err) {
     res.status(500).json({ error: "Failed to update fighter." });
   }

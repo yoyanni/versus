@@ -197,4 +197,10 @@ Bugs:
 
 ### Add CRUD operations - Update
 
+You can now update existing fighters, also a loading screen was added for when the page is refreshed when in a component where it depends on the fighters list.
+
+Also the controller was modified, it now brings back the whole fighter list in the db to correctly update the fighters state.
+
+A "Not found" page was added in the fighter route.
+
 ### Add CRUD operations - Delete

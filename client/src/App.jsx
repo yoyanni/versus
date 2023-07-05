@@ -22,15 +22,39 @@ export default function App() {
     }
     fetchData();
   }, []);
+
   return (
     <>
       <Navbar />
       {/* temp links */}
       <Link to="/">Home</Link> <Link to="/fighters">Fighter List</Link>
       <Routes>
-        <Route path="/" element={<Home fighters={fighters} />} />
-        <Route path="/fighters" element={<Fighters fighters={fighters} />} />
-        <Route path="/fighters/:id" element={<Fighter fighters={fighters} />} />
+        <Route
+          path="/"
+          element={fighters.length ? <Home fighters={fighters} /> : <Loading />}
+        />
+        <Route
+          path="/fighters"
+          element={
+            fighters.length ? <Fighters fighters={fighters} /> : <Loading />
+          }
+        />
+        <Route
+          path="/fighters/:id"
+          element={
+            fighters.length ? <Fighter fighters={fighters} /> : <Loading />
+          }
+        />
+        <Route
+          path="/fighters/:id/update"
+          element={
+            fighters.length ? (
+              <Form fighters={fighters} setFighters={setFighters} />
+            ) : (
+              <Loading />
+            )
+          }
+        />
         <Route
           path="/fighters/create"
           element={<Form setFighters={setFighters} />}
@@ -39,4 +63,8 @@ export default function App() {
       </Routes>
     </>
   );
+}
+
+function Loading() {
+  return <div>Loading...</div>;
 }

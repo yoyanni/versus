@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import standard from "../standardInfo.js";
 
@@ -218,9 +218,100 @@ const sections = [
   },
 ];
 
-export default function Form({ setFighters }) {
-  const [formData, setFormData] = useState(initialFormData);
+export default function Form({ fighters = null, setFighters }) {
+  const { id } = useParams();
+  const [formData, setFormData] = useState(formatState());
   const navigate = useNavigate();
+
+  function formatState() {
+    if (fighters === null) return initialFormData;
+
+    const fighter = fighters.find((f) => f._id === Number(id));
+
+    const {
+      weightClass,
+      rank,
+      firstName,
+      nickname,
+      lastName,
+      basic,
+      perks,
+      standUp,
+      grappling,
+      health,
+      moves,
+    } = fighter;
+
+    const formattedFighter = {
+      general: {
+        weightClass: weightClass,
+        rank: rank,
+        firstName: firstName,
+        nickname: nickname,
+        lastName: lastName,
+      },
+      levels: {
+        overAllLevel: basic.level,
+        standUpLevel: standUp.level,
+        grapplingLevel: grappling.level,
+        healthLevel: health.level,
+      },
+      perks: perks.map((perk) => perk.name),
+      basic: {
+        martialArt: basic.skills.martialArt,
+        stance: basic.skills.stance,
+        reach: basic.skills.reach,
+      },
+      standUpStats: {
+        punchSpeed: standUp.skills.punchSpeed,
+        punchPower: standUp.skills.punchPower,
+        accuracy: standUp.skills.accuracy,
+        blocking: standUp.skills.blocking,
+        headMovement: standUp.skills.headMovement,
+        footwork: standUp.skills.footwork,
+        switchStance: standUp.skills.switchStance,
+        takedownDefence: standUp.skills.takedownDefence,
+        kickPower: standUp.skills.kickPower,
+        kickSpeed: standUp.skills.kickSpeed,
+      },
+      grapplingStats: {
+        takedowns: grappling.skills.takedowns,
+        topControl: grappling.skills.topControl,
+        bottomControl: grappling.skills.bottomControl,
+        submissions: grappling.skills.submissions,
+        submissionDefence: grappling.skills.submissionDefence,
+        groundStriking: grappling.skills.groundStriking,
+        clinchStriking: grappling.skills.clinchStriking,
+        clinchControl: grappling.skills.clinchControl,
+      },
+      healthStats: {
+        cardio: health.skills.cardio,
+        chin: health.skills.chin,
+        body: health.skills.body,
+        legs: health.skills.legs,
+        recovery: health.skills.recovery,
+      },
+      punches: moves.punches,
+      kicks: moves.kicks,
+      clinch: moves.clinch,
+      takedowns: moves.takedowns,
+      getups: moves.ground.getups,
+      transitions: moves.ground.transitions,
+      reversals: moves.ground.reversals,
+      sweeps: moves.ground.sweeps,
+      strikes: moves.ground.strikes,
+      submissions: moves.submissions,
+      combos: moves.combos,
+      tempMove: {
+        moveName: "Jab",
+        level: 3,
+        parentKey: "punches",
+      },
+    };
+
+    return formattedFighter;
+  }
+
   // Update formData
   function handleFormChange(e, parentKey) {
     const { name, value, selectedOptions } = e.target;
@@ -306,7 +397,9 @@ export default function Form({ setFighters }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const url = "http://192.168.1.53:5000/fighters";
+    const url = id
+      ? `http://192.168.1.53:5000/fighters/${id}`
+      : "http://192.168.1.53:5000/fighters";
 
     const hasMoves = standard.moveKeys.every((key) => {
       return formData[key].length !== 0;
@@ -320,7 +413,6 @@ export default function Form({ setFighters }) {
       return;
     } else {
       const fighter = {
-        _id: null,
         ...formData.general,
         basic: { level: formData.levels.overAllLevel, skills: formData.basic },
         perks: formData.perks.map((perk) =>
@@ -355,27 +447,52 @@ export default function Form({ setFighters }) {
         },
       };
 
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(fighter),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Error: " + response.status);
-          }
-          return response.json();
+      if (id) {
+        fetch(url, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(fighter),
         })
-        .then((responseData) => {
-          setFighters((prevValue) => [...prevValue, responseData]);
-          navigate(`/fighters/${responseData._id}`);
-          alert("Successfully added!");
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error: " + response.status);
+            }
+            return response.json();
+          })
+          .then((responseData) => {
+            setFighters(responseData);
+            alert("Successfully updated!");
+            navigate(-1);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      } else {
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(fighter),
         })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error: " + response.status);
+            }
+            return response.json();
+          })
+          .then((responseData) => {
+            const id = responseData[responseData.length - 1]._id;
+            setFighters(responseData);
+            alert("Successfully added!");
+            navigate(`/fighters/${id}`, { replace: true });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
     }
   }
 
@@ -573,11 +690,16 @@ export default function Form({ setFighters }) {
   });
 
   return (
-    <form onSubmit={handleSubmit}>
-      {inputJSX}
-      {movesJSX}
-      <button type="submit">Submit</button>
-    </form>
+    <>
+      <div>
+        <Link to={id ? `/fighters/${id}` : "/fighters"}>Back</Link>
+      </div>
+      <form onSubmit={handleSubmit}>
+        {inputJSX}
+        {movesJSX}
+        <button type="submit">Submit</button>
+      </form>
+    </>
   );
 }
 
