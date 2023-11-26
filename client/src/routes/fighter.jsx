@@ -47,7 +47,7 @@ export default function fighter({ fighters, setFighters }) {
 
   function handleDelete(id) {
     if (confirm("Please confirm if you want to delete this record?")) {
-      const url = `http://192.168.1.53:5000/api/fighters/${id}`;
+      const url = `http://192.168.1.9:5000/api/fighters/${id}`;
       fetch(url, {
         method: "DELETE",
       })

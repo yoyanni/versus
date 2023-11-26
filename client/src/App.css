@@ -9,3 +9,28 @@
 .bg-elevated {
   background-color: var(--navBgElevated);
 }
+
+/* Restricted access view */
+.designWarning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+}
+
+.designWarningHeading {
+  font-size: var(--titleFontSize);
+  color: var(--titleDarkFontColor);
+}
+
+.designWarningSubHeading {
+  font-size: var(--secondaryFontSize);
+  color: var(--primaryDarkFontColor);
+}
+
+.designWarningText {
+  font-size: var(--tertiaryFontSize);
+  color: var(--tertiaryDarkFontColor);
+}

@@ -12,16 +12,38 @@ import "./App.css";
 
 export default function App() {
   const [fighters, setFighters] = useState([]);
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
     function fetchData() {
-      return fetch("http://192.168.1.53:5000/api/fighters")
+      return fetch("http://192.168.1.9:5000/api/fighters")
         .then((res) => res.json())
         .then((data) => setFighters(data))
         .catch((err) => console.log(err));
     }
+
+    // Attach the event listener
+    window.addEventListener("resize", handleResize);
+
     fetchData();
+
+    // Detach the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  if (windowSize.width > 400) return <Warning />;
 
   return (
     <>
@@ -71,4 +93,20 @@ export default function App() {
 
 function Loading() {
   return <div>Loading...</div>;
+}
+
+function Warning() {
+  return (
+    <>
+      <div className="designWarning">
+        <div className="designWarningHeading">
+          &#128679; Under development. &#128679;
+        </div>
+        <div className="designWarningSubHeading">
+          Please use the site via a smartphone, for now...
+        </div>
+        <div className="designWarningText">Sowwy</div>
+      </div>
+    </>
+  );
 }

@@ -206,3 +206,7 @@ A "Not found" page was added in the fighter route.
 ### Add CRUD operations - Delete
 
 You can now delete an existing fighter, also all urls for the back were prefixed with "/api" to accomodate for best practises.
+
+### Restrict view to only mobile
+
+I restricted the view to only mobile to keep the application clean. I did not like the current design for the any other device so once i have designed the different viewports I will then remove this restriction.
