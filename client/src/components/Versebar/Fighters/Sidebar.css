@@ -1,0 +1,127 @@
+.versus__fighters__red,
+.versus__fighters__blue {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  border-bottom: var(--cardBorder);
+}
+
+.versus__fighters__red {
+  background-color: var(--darkRed);
+  border-top-right-radius: var(--borderRadius);
+  box-shadow: var(--redFighterShadow);
+}
+
+.versus__fighters__blue {
+  background-color: var(--darkBlue);
+  border-top-left-radius: var(--borderRadius);
+  box-shadow: var(--blueFighterShadow);
+}
+
+/* Arrow */
+.versus__fighters__red__arrow,
+.versus__fighters__blue__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--s4);
+}
+
+.versus__fighters__red__arrow__img,
+.versus__fighters__blue__arrow__img {
+  width: 1rem;
+}
+
+.versus__fighters__red__arrow__img {
+  transform: rotate(-90deg);
+}
+
+.versus__fighters__blue__arrow__img {
+  transform: rotate(90deg);
+}
+/* End Arrow */
+
+/* Name */
+.versus__fighters__red__name,
+.versus__fighters__blue__name {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap; 
+}
+
+.versus__fighters__red__name__first,
+.versus__fighters__blue__name__first {
+  font-size: var(--secondaryFontSize);
+}
+.versus__fighters__red__name__last,
+.versus__fighters__blue__name__last {
+  font-size: var(--primaryFontSize);
+}
+.versus__fighters__blue__name__first,
+.versus__fighters__blue__name__last {
+  text-align: end;
+}
+/* End Name */
+
+
+/* Transitions */
+/* Sidebar expand */
+.name-enter {
+  width: 0;
+}
+
+.name-enter-done {
+  width: 15rem;
+  padding-inline: var(--s3);
+  transition: width 0.3s, padding-inline 0.3s;
+}
+
+.name-exit {
+  width: 15rem;
+  padding-inline: var(--s3);
+}
+
+.name-exit-done{
+  width: 0;
+  transition: width 0.3s, padding-inline 0.3s;
+}
+
+/* Red Arrow Rotation */
+.red-arrow-enter {
+  transform: rotate(-90deg);
+}
+
+.red-arrow-enter-done {
+  transform: rotate(90deg);
+  transition: transform 0.2s 0.3s;
+}
+
+.red-arrow-exit {
+  transform: rotate(90deg);
+}
+
+.red-arrow-exit-done{
+  transform: rotate(-90deg);
+  transition: transform 0.2s 0.3s;
+}
+
+/* Blue Arrow Rotation */
+.blue-arrow-enter {
+  transform: rotate(90deg);
+}
+
+.blue-arrow-enter-done {
+  transform: rotate(-90deg);
+  transition: transform 0.2s 0.3s;
+}
+
+.blue-arrow-exit {
+  transform: rotate(-90deg);
+}
+
+.blue-arrow-exit-done {
+  transform: rotate(90deg);
+  transition: transform 0.2s 0.3s;
+}
+/* End Transitions */

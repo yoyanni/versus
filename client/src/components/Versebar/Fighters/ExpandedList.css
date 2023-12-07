@@ -1,0 +1,107 @@
+.versus__red-list,
+.versus__blue-list {
+  width: 100%;
+}
+
+.versus__red-list {
+  background-color: var(--red);
+}
+
+.versus__blue-list {
+  background-color: var(--blue);
+}
+
+/* Filter & Grid */
+.versus__red-list__filter,
+.versus__blue-list__filter {
+  padding: var(--s3);
+  border-bottom: var(--cardBorder);
+}
+
+.versus__red-list__filter__input,
+.versus__blue-list__filter__input {
+  margin-right: var(--s3);
+}
+
+.versus__red-list__filter,
+.versus__red-list__grid__heading {
+  background-color: var(--darkRed);
+}
+
+.versus__blue-list__filter,
+.versus__blue-list__grid__heading {
+  background-color: var(--darkBlue);
+}
+
+.versus__red-list__grid,
+.versus__blue-list__grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.versus__red-list__grid__heading,
+.versus__blue-list__grid__heading {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  text-align: center;
+  border-bottom: var(--cardBorder);
+}
+
+.versus__red-list__grid__body,
+.versus__blue-list__grid__body {
+  height: 254px;
+  overflow-y: scroll;
+}
+
+.versus__red-list__grid__body__fighter,
+.versus__blue-list__grid__body__fighter {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  text-align: center;
+  border-bottom: var(--cardBorder);
+}
+
+.versus__red-list__grid__body__fighter__name,
+.versus__blue-list__grid__body__fighter__name {
+  text-align: start;
+  padding-left: var(--s5);
+}
+
+.versus__red-list__grid__body__fighter__name__first,
+.versus__blue-list__grid__body__fighter__name__first {
+  font-size: var(--secondaryFontSize);
+  font-size: var(--tertiaryFontSize);
+}
+
+.versus__red-list__grid__body__fighter__name__last,
+.versus__blue-list__grid__body__fighter__name__last {
+  font-size: var(--primaryFontSize);
+  font-weight: bold;
+  letter-spacing: var(--s1);
+}
+/* End Filter & Grid */
+
+/* Transition */
+.blue-list-enter,
+.red-list-enter {
+  height: 0;
+}
+
+.blue-list-enter-done,
+.red-list-enter-done {
+  height: 20rem;
+  transition: height 0.3s;
+}
+
+.blue-list-exit,
+.red-list-exit {
+  height: 20rem;
+}
+
+.blue-list-exit-done,
+.red-list-exit-done {
+  height: 0;
+  transition: height 0.3s;
+}
+/* End Transition */

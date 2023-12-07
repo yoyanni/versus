@@ -1,0 +1,9 @@
+.versus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  color: var(--titleFontColor);
+}

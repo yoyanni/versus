@@ -11,7 +11,9 @@
   --cardBg: #f6f6f6;
   --cardBgElevated: #fff;
   --red: #ff4d4f;
+  --darkRed: #f5222d;
   --blue: #4096ff;
+  --darkBlue: #1677ff;
   --standup: #ff7a45;
   --grappling: #1677ff;
   --health: #389e0d;
@@ -23,15 +25,28 @@
   --secondaryDarkFontColor: rgba(0, 0, 0, 0.45);
   --tertiaryDarkFontColor: rgba(0, 0, 0, 0.25);
   --borderDarkFontColor: rgba(0, 0, 0, 0.15);
+  --borderLightFontColor: rgba(255, 255, 255, 0.15);
   --titleFontSize: 24px;
   --primaryFontSize: 20px;
   --secondaryFontSize: 16px;
   --tertiaryFontSize: 14px;
   --quaternaryFontSize: 12px;
   /* General Styles */
-  --cardBorder: 1px solid rgba(0, 0, 0, 0.15);
+  /* Sizes */
+  --s5: 2rem;
+  --s4: 1rem;
+  --s3: 0.5rem;
+  --s2: 0.25rem;
+  --s1: 0.1rem;
+  /* Borders */
+  --borderRadius: 10px;
+  --cardBorder: 1px solid var(--borderDarkFontColor);
+  --weightClassBorder: 1px solid var(--borderLightFontColor);
+  /* Shadows */
   --cardShadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  --verseBarShadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
+  --weightClassShadow: 5px 0px 15px rgba(0, 0, 0, 0.6);
+  --redFighterShadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  --blueFighterShadow: -5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Resetting CSS */

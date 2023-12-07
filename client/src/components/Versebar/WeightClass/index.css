@@ -1,0 +1,82 @@
+.versus__weightclass {
+  margin-bottom: var(--s4);
+  letter-spacing: var(--s2);
+  font-size: var(--tertiaryFontSize);
+  color: var(--titleFontColor);
+  background-color: var(--navBgElevated);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--weightClassShadow);
+}
+
+.versus__weightclass__selected {
+  display: flex;
+  justify-content: center;
+  padding: var(--s3);
+  column-gap: var(--s3);
+  font-size: var(--tertiaryFontSize);
+  color: var(--titleFontColor);
+  background-color: var(--navBgElevated);
+  border-radius: var(--borderRadius);
+}
+
+.versus__weightclass__img {
+  width: 1rem;
+  margin-block: auto;
+  transform: rotate(180deg);
+}
+
+.versus__weightclass__pickup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--s2);
+  overflow: hidden;
+  border-bottom: var(--weightClassBorder);
+}
+
+/* Transitions */
+/* Pick up */
+.pickup-enter {
+  height: 0;
+  width: 0;
+}
+
+.pickup-enter-done {
+  height: 288px;
+  width: 299px;
+  padding: var(--s3);
+  transition: height 0.8s 0.6s, width 0.6s, padding 0.2s 0.6s;
+}
+
+.pickup-exit {
+  height: 288px;
+  width: 299px;
+  padding: var(--s3);
+}
+
+.pickup-exit-done {
+  width: 0;
+  height: 0;
+  transition: height 0.8s, width 0.6s 0.8s, padding 0.2s;
+}
+/* End Pick up */
+
+/* Arrow */
+.selected-enter {
+  transform: rotate(180deg);
+}
+
+.selected-enter-done {
+  transform: rotate(0);
+  transition: transform 0.3s 1.4s;
+}
+
+.selected-exit {
+  transform: rotate(0);
+}
+
+.selected-exit-done {
+  transition: transform 0.3s 1.4s;
+}
+/* End Selected Arrow */
+/* End Transitions */

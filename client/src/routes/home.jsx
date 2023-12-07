@@ -13,6 +13,7 @@ const initialState = {
 export default function Home({ fighters }) {
   const [selectedIds, setSelectedIds] = useState(initialState);
 
+  // The selectedData that drives the comparison feature
   const selectedData = {
     weightClass: standard.weightClasses[selectedIds.weightClass],
     red: fighters.find((fighter) => fighter._id == selectedIds.red),
@@ -30,20 +31,21 @@ export default function Home({ fighters }) {
   // Changes the weightClass State
   function changeWeight(id) {
     if (selectedIds.weightClass === id) return;
-    setSelectedIds({
-      weightClass: id,
-      red: standard.defaultFighters[id].red,
-      blue: standard.defaultFighters[id].blue,
-    });
+    else {
+      setSelectedIds({
+        weightClass: id,
+        red: standard.defaultFighters[id].red,
+        blue: standard.defaultFighters[id].blue,
+      });
+    }
   }
 
   // Changes the fighters State
   function changeFighters(id, side) {
-    console.log(id);
-    console.log(side);
     if (selectedIds[side] === id) return;
     setSelectedIds((prevState) => ({ ...prevState, [side]: id }));
   }
+
   return (
     fighters.length !== 0 && (
       <>
