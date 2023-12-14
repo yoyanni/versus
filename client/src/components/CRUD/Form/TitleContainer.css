@@ -1,0 +1,14 @@
+.form__section {
+  margin-inline: var(--s3);
+}
+
+.form__section__title {
+  font-size: var(--primaryFontSize);
+  color: var(--titleDarkFontColor);
+}
+
+.form__section__note {
+  font-size: var(--tertiaryFontSize);
+  color: var(--secondaryDarkFontColor);
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+.accordion {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--s2) var(--s4);
+  background-color: var(--cardBgElevated);
+  border-bottom: var(--cardBorder);
+  font-weight: bold;
+  font-size: var(--primaryFontSize);
+  color: var(--titleDarkFontColor);
+}
+
+.accordion-items {
+  border-bottom: var(--cardBorder);
+}
+
+.nested-one {
+  padding-left: 2rem;
+}
+
+.nested-two {
+  padding-left: 3rem;
+}
+
+.nested-three {
+  padding-left: 4rem;
+}

@@ -7,24 +7,32 @@
 }
 
 .nav__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 0.75rem;
   background-color: var(--navBg);
 }
 
 .nav__top__title {
   font-size: var(--titleFontSize);
+}
+
+.nav__top__title,
+.nav__top__link {
+  text-decoration: none;
+  color: var(--titleFontColor);
+}
+
+.nav__top__link:visited {
   color: var(--titleFontColor);
 }
 
 .nav__bot {
-  /* Positioning */
   display: flex;
-  /* Spacing */
-  padding: 0.25rem 1.5rem 0.25rem 0.75rem;
-  /* Font Styling */
+  padding: var(--s2) var(--s4);
   color: var(--titleFontColor);
   font-size: var(--quaternaryFontSize);
-  /* General Styling */
   background-color: var(--navBgElevated);
 }
 

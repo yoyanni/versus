@@ -1,0 +1,70 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--s4);
+}
+
+.form__heading {
+  margin-top: var(--s3);
+  font-size: var(--titleFontSize);
+  color: var(--titleDarkFontColor);
+  text-align: center;
+}
+
+.form__section__field {
+  display: grid;
+  grid-template-columns: auto 170px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--s2);
+}
+
+.form__section__field__label {
+  color: var(--primaryDarkFontColor);
+  font-weight: bold;
+}
+
+.form__section__field__input::placeholder {
+  color: var(--tertiaryDarkFontColor);
+}
+
+.form__section__field__input,
+.form__section__field__select {
+  color: var(--primaryDarkFontColor);
+  font-weight: bold;
+}
+
+.form__section__field__select-multi {
+  width: 100%;
+  color: var(--titleDarkFontColor);
+}
+
+.form__section__field__button {
+  display: block;
+  margin: var(--s4) auto 0 auto;
+}
+
+.form__section__field__button,
+.form__button {
+  padding: var(--s2) var(--s4);
+  border: var(--cardBorder);
+  background-color: var(--cardBgElevated);
+  border-radius: var(--borderRadius);
+  font-size: var(--secondaryFontSize);
+  box-shadow: var(--cardShadow);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--titleDarkFontColor);
+}
+
+.form__button {
+  margin: 0 auto var(--s4) auto;
+}
+
+.form__moves {
+  border-top: var(--cardBorder);
+}
+
+.no-moves {
+  text-align: center;
+}

@@ -1,7 +1,3 @@
-import React from 'react'
-
 export default function Error() {
-  return (
-    <div>Error</div>
-  )
+  return <div>An error occured. Please go back and try again.</div>;
 }

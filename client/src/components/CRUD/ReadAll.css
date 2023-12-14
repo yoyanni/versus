@@ -1,0 +1,34 @@
+.fighters {
+  height: 90vh;
+}
+
+.fighters__heading {
+  margin-top: var(--s4);
+  font-size: var(--titleFontSize);
+  text-align: center;
+}
+
+.fighters__body {
+  padding: var(--s2) var(--s4);
+}
+
+.fighters__container {
+  border-top: var(--cardBorder);
+  box-shadow: var(--cardShadow);
+}
+
+.fighters__create-link {
+  display: block;
+  width: fit-content;
+  /* Margin bottom is not applied due to display: block */
+  margin: var(--s4) auto;
+  padding: var(--s2) var(--s4);
+  border: var(--cardBorder);
+  background-color: var(--cardBgElevated);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--cardShadow);
+  color: var(--titleDarkFontColor);
+  font-size: var(--primaryFontSize);
+  font-weight: bold;
+  text-decoration: none;
+}

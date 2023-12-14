@@ -1,13 +1,14 @@
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 
-import Home from "./routes/home";
+import Loading from "./components/Loading";
+import Navbar from "./components/Navbar";
 import Fighters from "./routes/fighters";
 import Fighter from "./routes/fighter";
+import Create from "./routes/create";
+import Update from "./routes/update";
 import Error from "./routes/error";
-import Navbar from "./components/Navbar";
-import Form from "./components/Form";
-
+import Home from "./routes/home";
 import "./App.css";
 
 export default function App() {
@@ -48,8 +49,6 @@ export default function App() {
   return (
     <>
       <Navbar />
-      {/* temp links */}
-      <Link to="/">Home</Link> <Link to="/fighters">Fighter List</Link>
       <Routes>
         <Route
           path="/"
@@ -60,6 +59,10 @@ export default function App() {
           element={
             fighters.length ? <Fighters fighters={fighters} /> : <Loading />
           }
+        />
+        <Route
+          path="/fighters/create"
+          element={<Create setFighters={setFighters} />}
         />
         <Route
           path="/fighters/:id"
@@ -75,24 +78,16 @@ export default function App() {
           path="/fighters/:id/update"
           element={
             fighters.length ? (
-              <Form fighters={fighters} setFighters={setFighters} />
+              <Update fighters={fighters} setFighters={setFighters} />
             ) : (
               <Loading />
             )
           }
         />
-        <Route
-          path="/fighters/create"
-          element={<Form setFighters={setFighters} />}
-        />
         <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
-}
-
-function Loading() {
-  return <div>Loading...</div>;
 }
 
 function Warning() {

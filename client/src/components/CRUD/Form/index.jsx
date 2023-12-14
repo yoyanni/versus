@@ -1,9 +1,11 @@
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
 
-import standard from "../standardInfo.js";
-
-import "./Form.css";
+import AccordionItem from "../../Accordion/AccordionItem.jsx";
+import TitleContainer from "./TitleContainer.jsx";
+import Accordion from "../../Accordion/index.jsx";
+import standard from "../../../standardInfo.js";
+import "./index.css";
 
 const initialFormData = {
   general: {
@@ -77,32 +79,32 @@ const sections = [
     title: "General Info",
     fields: [
       {
-        label: "First name",
+        label: "First Name:",
         type: "text",
         parentKey: "general",
         name: "firstName",
       },
       {
-        label: "Last name",
+        label: "Last Name:",
         type: "text",
         parentKey: "general",
         name: "lastName",
       },
       {
-        label: "Nickname",
+        label: "Nickname:",
         type: "text",
         parentKey: "general",
         name: "nickname",
       },
       {
         options: standard.weightClasses,
-        label: "Weight Class",
+        label: "Weight Class:",
         parentKey: "general",
         name: "weightClass",
       },
       {
         options: standard.ranks,
-        label: "Rank",
+        label: "Rank:",
         parentKey: "general",
         name: "rank",
       },
@@ -113,28 +115,28 @@ const sections = [
     fields: [
       {
         options: standard.levels,
-        label: "Level",
+        label: "Level:",
         parentKey: "levels",
         name: "overAllLevel",
       },
       {
         options: standard.martialArts,
-        label: "Martial Arts",
+        label: "Martial Arts:",
         parentKey: "basic",
         name: "martialArt",
       },
       {
         options: standard.stances,
-        label: "Stance",
+        label: "Stance:",
         parentKey: "basic",
         name: "stance",
       },
-      { label: "Reach", type: "number", parentKey: "basic", name: "reach" },
+      { label: "Reach:", type: "number", parentKey: "basic", name: "reach" },
     ],
   },
   {
     title: "Perks",
-    note: "(Select up to 5 perks)",
+    note: " - Select up to 5 perks",
     optionGroups: {
       standUp: {
         label: "Stand-Up",
@@ -155,13 +157,13 @@ const sections = [
     fields: [
       {
         options: standard.levels,
-        label: "Level",
+        label: "Level:",
         parentKey: "levels",
         name: "standUpLevel",
       },
       ...standard.standUp.map((stat) => ({
         options: standard.stats,
-        label: stat.name,
+        label: `${stat.name}:`,
         parentKey: "standUpStats",
         name: stat.propName,
       })),
@@ -172,13 +174,13 @@ const sections = [
     fields: [
       {
         options: standard.levels,
-        label: "Level",
+        label: "Level:",
         parentKey: "levels",
         name: "grapplingLevel",
       },
       ...standard.grappling.map((stat) => ({
         options: standard.stats,
-        label: stat.name,
+        label: `${stat.name}:`,
         parentKey: "grapplingStats",
         name: stat.propName,
       })),
@@ -189,20 +191,20 @@ const sections = [
     fields: [
       {
         options: standard.levels,
-        label: "Level",
+        label: "Level:",
         parentKey: "levels",
         name: "healthLevel",
       },
       ...standard.health.map((stat) => ({
         options: standard.stats,
-        label: stat.name,
+        label: `${stat.name}:`,
         parentKey: "healthStats",
         name: stat.propName,
       })),
     ],
   },
   {
-    title: "Moves",
+    title: "Add Moves",
     parentKey: "tempMove",
     levels: standard.moveLevels,
     optionGroups: {
@@ -220,9 +222,18 @@ const sections = [
 
 export default function Form({ fighters = null, setFighters }) {
   const { id } = useParams();
+  const [activeAccordion, setActiveAccordion] = useState(null);
   const [formData, setFormData] = useState(formatState());
   const navigate = useNavigate();
 
+  // Toggles which Accordion is active
+  function handleClick(id) {
+    if (id === activeAccordion) setActiveAccordion(null);
+    else setActiveAccordion(id);
+  }
+
+  // Mainly for state and when editing fighter
+  // Find fighter and format the data for state
   function formatState() {
     if (fighters === null) return initialFormData;
 
@@ -316,6 +327,8 @@ export default function Form({ fighters = null, setFighters }) {
   function handleFormChange(e, parentKey) {
     const { name, value, selectedOptions } = e.target;
 
+    // Check if perks because parentKey will be null
+    // and selectedOptions will only have one value
     if (name === "perks") {
       const selectedValues = Array.from(
         selectedOptions,
@@ -344,6 +357,8 @@ export default function Form({ fighters = null, setFighters }) {
           },
         };
 
+        // This removes the "Ground - " from the optgroups to get the parentKey
+        // Also adds the parentkey for the temp move to state
         if (name === "moveName") {
           const groupLabel = selectedOptions[0].parentElement.label;
           const key = groupLabel.replace("Ground - ", "").toLowerCase();
@@ -359,6 +374,7 @@ export default function Form({ fighters = null, setFighters }) {
   function handleMoveAddition(e) {
     e.preventDefault();
 
+    const moveName = formData.tempMove.moveName;
     const parentKey = formData.tempMove.parentKey;
     const isGroundMove = [
       "getups",
@@ -367,8 +383,9 @@ export default function Form({ fighters = null, setFighters }) {
       "sweeps",
       "strikes",
     ].includes(parentKey);
-    const moveName = formData.tempMove.moveName;
 
+    // Indices were added to make the options unique
+    // They were saved to state as such so slice the last two characters
     const newMove = {
       name: isGroundMove ? moveName.slice(0, -2) : moveName,
       level: formData.tempMove.level,
@@ -397,14 +414,18 @@ export default function Form({ fighters = null, setFighters }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    // check if editing or creating
     const url = id
       ? `http://192.168.1.9:5000/api/fighters/${id}`
       : "http://192.168.1.9:5000/api/fighters";
 
-    const hasMoves = standard.moveKeys.every((key) => {
-      return formData[key].length !== 0;
-    });
+    // Check if all mandatory moves have been given to submit form to backend
+    const hasMoves = standard.moveKeys.every(
+      (key) => formData[key].length !== 0
+    );
 
+    // Check perks and moves
+    // If alright, format the fighter object that will be sent to DB
     if (formData.perks.length === 0) {
       alert("Please choose at least one perk.");
       return;
@@ -447,6 +468,7 @@ export default function Form({ fighters = null, setFighters }) {
         },
       };
 
+      // Check if fighter is new or being updated
       if (id) {
         fetch(url, {
           method: "PUT",
@@ -496,22 +518,22 @@ export default function Form({ fighters = null, setFighters }) {
     }
   }
 
-  // Inputs
+  // Inputs/Selects
   const inputJSX = sections.map((section, sectionIndex) => {
     let jsx;
     if (section.title === "Perks") {
       // Map through options in specific groups
-      const perks = Object.keys(section.optionGroups).map((key, keyIndex) => {
+      const perks = Object.keys(section.optionGroups).map((key) => {
         const optionGroup = section.optionGroups[key];
-        const options = optionGroup.options.map((option, optionIndex) => {
+        const options = optionGroup.options.map((option) => {
           return (
-            <option key={optionIndex} value={option.name}>
+            <option key={option.name} value={option.name}>
               {option.name}
             </option>
           );
         });
         return (
-          <optgroup key={keyIndex} label={optionGroup.label}>
+          <optgroup key={key} label={optionGroup.label}>
             {options}
           </optgroup>
         );
@@ -523,95 +545,105 @@ export default function Form({ fighters = null, setFighters }) {
           name="perks"
           value={formData.perks}
           onChange={handleFormChange}
+          className="form__section__field__select-multi"
           multiple
           size={10}
         >
           {perks}
         </select>
       );
-    } else if (section.title === "Moves") {
-      const levels = section.levels.map((level, index) => {
+    } else if (section.title === "Add Moves") {
+      // Create Level options for select tag
+      const levels = section.levels.map((level) => {
         return (
-          <option key={index} value={level}>
+          <option key={level} value={level}>
             {level}
           </option>
         );
       });
 
-      const moves = Object.keys(section.optionGroups).map((key, keyIndex) => {
+      // Create optgroups & options for "Add Move" select tag
+      const moves = Object.keys(section.optionGroups).map((key) => {
         const title = key[0].toUpperCase() + key.slice(1);
         const optionGroup = section.optionGroups[key];
+
+        // "ground" adds more details to the optgroups and options
         if (key === "ground") {
-          const groundMovements = Object.keys(optionGroup).map(
-            (innerKey, innerKeyIndex) => {
-              const subtitle = innerKey[0].toUpperCase() + innerKey.slice(1);
-              const innerTitle = title.concat(" - " + subtitle);
+          return Object.keys(optionGroup).map((innerKey, innerKeyIndex) => {
+            const subtitle = innerKey[0].toUpperCase() + innerKey.slice(1);
+            const innerTitle = title.concat(" - " + subtitle);
 
-              const options = optionGroup[innerKey].map(
-                (option, optionIndex) => {
-                  // value must be unique, that is why the indices are added but they do need to be removed afterwards
-                  // an empty string is added to implicitly coerce the indices so they do not add up
-                  return (
-                    <option
-                      key={optionIndex}
-                      value={option.concat("" + innerKeyIndex + optionIndex)}
-                    >
-                      {option.concat(" " + subtitle)}
-                    </option>
-                  );
-                }
-              );
-
-              return (
-                <optgroup key={innerKeyIndex} label={innerTitle}>
-                  {options}
-                </optgroup>
-              );
-            }
-          );
-
-          return groundMovements;
-        } else {
-          const options = optionGroup.map((option, optionIndex) => {
-            return (
-              <option key={optionIndex} value={option}>
-                {option}
+            // value must be unique, that is why the indices are added but they do need to be removed afterwards
+            // an empty string is added to implicitly coerce the indices so they do not add up
+            const options = optionGroup[innerKey].map((option, optionIndex) => (
+              <option
+                key={option}
+                value={option.concat("" + innerKeyIndex + optionIndex)}
+              >
+                {option.concat(" " + subtitle)}
               </option>
+            ));
+
+            return (
+              <optgroup key={innerKey} label={innerTitle}>
+                {options}
+              </optgroup>
             );
           });
-
+        } else {
           return (
-            <optgroup key={keyIndex} label={title}>
-              {options}
+            <optgroup key={key} label={title}>
+              {optionGroup.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </optgroup>
           );
         }
       });
 
-      // jsx to print
+      // "Add Move" JSX section
       jsx = (
         <>
-          <label htmlFor="moveName">Type of Move</label>
-          <select
-            name="moveName"
-            value={formData[section.parentKey].moveName}
-            onChange={(e) => handleFormChange(e, section.parentKey)}
+          <div className="form__section__field">
+            <label htmlFor="moveName" className="form__section__field__label">
+              Move:
+            </label>
+            <select
+              name="moveName"
+              value={formData[section.parentKey].moveName}
+              onChange={(e) => handleFormChange(e, section.parentKey)}
+              className="form__section__field__select"
+            >
+              {moves}
+            </select>
+          </div>
+          <div className="form__section__field">
+            <label htmlFor="level" className="form__section__field__label">
+              Level:
+            </label>
+            <select
+              name="level"
+              value={formData[section.parentKey].level}
+              onChange={(e) => handleFormChange(e, section.parentKey)}
+              className="form__section__field__select"
+            >
+              {levels}
+            </select>
+          </div>
+          <button
+            onClick={handleMoveAddition}
+            className="form__section__field__button"
           >
-            {moves}
-          </select>
-          <label htmlFor="level">Move Level</label>
-          <select
-            name="level"
-            value={formData[section.parentKey].level}
-            onChange={(e) => handleFormChange(e, section.parentKey)}
-          >
-            {levels}
-          </select>
-          <button onClick={handleMoveAddition}>Add move</button>
+            Add move
+          </button>
         </>
       );
     } else {
       jsx = section.fields.map((field, fieldIndex) => {
+        // if select tag (Dropdown)
+        // else normal input tag
         if (field.options) {
           const options = field.options.map((option, optionIndex) => {
             return (
@@ -622,14 +654,18 @@ export default function Form({ fighters = null, setFighters }) {
           });
 
           return (
-            <div key={fieldIndex}>
-              <label className="label" htmlFor={field.name}>
+            <div key={fieldIndex} className="form__section__field">
+              <label
+                className="form__section__field__label"
+                htmlFor={field.name}
+              >
                 {field.label}
               </label>
               <select
-                name={field.name}
-                value={formData[field.parentKey][field.name]}
                 onChange={(e) => handleFormChange(e, field.parentKey)}
+                value={formData[field.parentKey][field.name]}
+                className="form__section__field__select"
+                name={field.name}
               >
                 {options}
               </select>
@@ -637,16 +673,20 @@ export default function Form({ fighters = null, setFighters }) {
           );
         } else {
           return (
-            <div key={fieldIndex}>
-              <label className="label" htmlFor={field.name}>
+            <div key={field.name} className="form__section__field">
+              <label
+                className="form__section__field__label"
+                htmlFor={field.name}
+              >
                 {field.label}
               </label>
               <input
-                className="input"
+                className="form__section__field__input"
                 type={field.type}
                 name={field.name}
                 value={formData[field.parentKey][field.name]}
                 onChange={(e) => handleFormChange(e, field.parentKey)}
+                placeholder={field.label.slice(0, -1)}
                 required
               />
             </div>
@@ -665,52 +705,90 @@ export default function Form({ fighters = null, setFighters }) {
     );
   });
 
-  // Display Moves
+  // Display moves that the fighter currently has
   const movesJSX = standard.moveKeys.map((key, keyIndex) => {
-    const typeOfMove = formData[key];
+    let typeOfMove = formData[key];
     const title = key[0].toUpperCase() + key.slice(1);
-    const jsx = typeOfMove.map((move, index) => {
+
+    // "ground" has a further title to add
+    if (key === "ground") {
+      const jsx = standard.groundKeys.map((groundKey) => {
+        typeOfMove = formData[groundKey];
+        const groundTitle = groundKey[0].toUpperCase() + groundKey.slice(1);
+        const groundJSX = formData[groundKey].map((groundMove) => (
+          <AccordionItem
+            key={groundMove}
+            nestLevel="two"
+            handleMoveRemoval={(e) => handleMoveRemoval(e, key, move)}
+          >
+            {groundMove.name}: {groundMove.level}
+          </AccordionItem>
+        ));
+        return (
+          <Accordion
+            key={groundKey}
+            title={groundTitle}
+            nestLevel="one"
+            hasOwnState
+          >
+            {typeOfMove.length ? (
+              groundJSX
+            ) : (
+              <div className="no-moves">No moves yet.</div>
+            )}
+          </Accordion>
+        );
+      });
       return (
-        <div key={index}>
-          <p>
-            {move.name}
-            {move.level}
-          </p>
-          <button onClick={(e) => handleMoveRemoval(e, key, move)}>
-            Remove
-          </button>
-        </div>
+        <Accordion
+          key={keyIndex}
+          title={title}
+          handleClick={handleClick}
+          activeAccordion={activeAccordion}
+        >
+          {jsx}
+        </Accordion>
       );
-    });
-    return (
-      <TitleContainer key={keyIndex} title={title}>
-        {typeOfMove.length ? jsx : "No moves yet."}
-      </TitleContainer>
-    );
+    } else {
+      const jsx = typeOfMove.map((move, index) => {
+        return (
+          <AccordionItem
+            key={index}
+            handleMoveRemoval={(e) => handleMoveRemoval(e, key, move)}
+          >
+            {move.name}: {move.level}
+          </AccordionItem>
+        );
+      });
+      return (
+        <Accordion
+          key={keyIndex}
+          title={title}
+          handleClick={handleClick}
+          activeAccordion={activeAccordion}
+        >
+          {typeOfMove.length ? (
+            jsx
+          ) : (
+            <div className="no-moves">No moves yet.</div>
+          )}
+        </Accordion>
+      );
+    }
   });
 
   return (
     <>
-      <div>
-        <Link to={id ? `/fighters/${id}` : "/fighters"}>Back</Link>
-      </div>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="form__heading">
+          {id ? "Edit a Fighter" : "Create a Fighter"}
+        </h1>
         {inputJSX}
-        {movesJSX}
-        <button type="submit">Submit</button>
+        <div className="form__moves">{movesJSX}</div>
+        <button type="submit" className="form__button">
+          {id ? "Save" : "Create"}
+        </button>
       </form>
     </>
-  );
-}
-
-function TitleContainer({ title, note = null, children }) {
-  return (
-    <div>
-      <h4>
-        {title}
-        {note}
-      </h4>
-      {children}
-    </div>
   );
 }

@@ -218,3 +218,13 @@ The Versebar has been updated to a better design (in my opinion). What was done:
 - The whole UI design changed
 - The file structure of the Versebar component changed
 - A filter feature was added
+
+### Style the CRUD Operations
+
+Style was added to the CRUD operations, it is now much more visually pleasing. A few things that changed were:
+
+- Accordion/AccordionItem components were created and used for list (eg. all fighters per weightclass, all types of moves of a fighter)
+- The way they have been set out makes it easier to understand what you have chosen or not.
+- Some general cleaning and better positioning of file structures but also code (eg. better and more comments were added, better practises were used)
+- Attempted to keep everything actioned the same way, so new routes were created to be uniform.
+

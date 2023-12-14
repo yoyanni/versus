@@ -1,0 +1,45 @@
+.fighter {
+  height: 90vh;
+}
+
+.fighter__basic {
+  padding: var(--s4);
+  color: var(--titleDarkFontColor);
+}
+
+.fighter__basic__header {
+  font-size: var(--titleFontSize);
+}
+
+.fighter__basic__details {
+  font-weight: bold;
+}
+
+.fighter__basic__details__detail {
+  color: var(--primaryDarkFontColor);
+}
+
+.fighter__moves {
+  border-top: var(--cardBorder);
+  box-shadow: var(--cardShadow);
+}
+
+.fighter__buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: var(--s5);
+  margin-top: var(--s4);
+}
+
+.fighter__buttons__edit,
+.fighter__buttons__delete {
+  padding: var(--s2) var(--s4);
+  border: var(--cardBorder);
+  background-color: var(--cardBgElevated);
+  border-radius: var(--borderRadius);
+  font-size: var(--primaryFontSize);
+  color: var(--titleDarkFontColor);
+  box-shadow: var(--cardShadow);
+  font-weight: bold;
+  text-decoration: none;
+}

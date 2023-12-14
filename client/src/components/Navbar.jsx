@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -32,7 +33,12 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="nav__top">
-        <span className="nav__top__title">Versus</span>
+        <Link to="/" className="nav__top__title">
+          Versus
+        </Link>
+        <Link to="/fighters" className="nav__top__link">
+          Fighters
+        </Link>
       </div>
       <div className="nav__bot">
         <span className="nav__bot__weight">{weightclass[hr].join(", ")}</span>
