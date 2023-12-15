@@ -27,7 +27,7 @@ export default function App() {
     };
 
     function fetchData() {
-      return fetch("http://192.168.1.9:5000/api/fighters")
+      return fetch("https://versus.onrender.com/api/fighters")
         .then((res) => res.json())
         .then((data) => setFighters(data))
         .catch((err) => console.log(err));

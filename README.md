@@ -228,3 +228,6 @@ Style was added to the CRUD operations, it is now much more visually pleasing. A
 - Some general cleaning and better positioning of file structures but also code (eg. better and more comments were added, better practises were used)
 - Attempted to keep everything actioned the same way, so new routes were created to be uniform.
 
+### Setup Production Database and Connection
+
+Not much was done other than setting up the Cluster on MongoDB, supplying the connection string and testing it.
