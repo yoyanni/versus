@@ -416,13 +416,19 @@ export default function Form({ fighters = null, setFighters }) {
 
     // check if editing or creating
     const url = id
-      ? `http://192.168.1.9:5000/api/fighters/${id}`
-      : "http://192.168.1.9:5000/api/fighters";
+      ? `${import.meta.env.VITE_API_URL}/${id}`
+      : `${import.meta.env.VITE_API_URL}`;
 
     // Check if all mandatory moves have been given to submit form to backend
-    const hasMoves = standard.moveKeys.every(
-      (key) => formData[key].length !== 0
-    );
+    const hasMoves = standard.moveKeys.every((key) => {
+      if (key === "ground") {
+        return standard.groundKeys.every(
+          (groundKey) => formData[groundKey].length !== 0
+        );
+      } else {
+        return formData[key].length !== 0;
+      }
+    });
 
     // Check perks and moves
     // If alright, format the fighter object that will be sent to DB
@@ -687,7 +693,7 @@ export default function Form({ fighters = null, setFighters }) {
                 value={formData[field.parentKey][field.name]}
                 onChange={(e) => handleFormChange(e, field.parentKey)}
                 placeholder={field.label.slice(0, -1)}
-                required
+                required={field.name !== "nickname" && true}
               />
             </div>
           );
@@ -696,7 +702,7 @@ export default function Form({ fighters = null, setFighters }) {
     }
     return (
       <TitleContainer
-        key={sectionIndex}
+        key={section.title}
         title={section.title}
         note={section.note && section.note}
       >
@@ -706,7 +712,7 @@ export default function Form({ fighters = null, setFighters }) {
   });
 
   // Display moves that the fighter currently has
-  const movesJSX = standard.moveKeys.map((key, keyIndex) => {
+  const movesJSX = standard.moveKeys.map((key) => {
     let typeOfMove = formData[key];
     const title = key[0].toUpperCase() + key.slice(1);
 
@@ -717,9 +723,11 @@ export default function Form({ fighters = null, setFighters }) {
         const groundTitle = groundKey[0].toUpperCase() + groundKey.slice(1);
         const groundJSX = formData[groundKey].map((groundMove) => (
           <AccordionItem
-            key={groundMove}
+            key={groundMove.name}
             nestLevel="two"
-            handleMoveRemoval={(e) => handleMoveRemoval(e, key, move)}
+            handleMoveRemoval={(e) =>
+              handleMoveRemoval(e, groundKey, groundMove)
+            }
           >
             {groundMove.name}: {groundMove.level}
           </AccordionItem>
@@ -741,7 +749,7 @@ export default function Form({ fighters = null, setFighters }) {
       });
       return (
         <Accordion
-          key={keyIndex}
+          key={key}
           title={title}
           handleClick={handleClick}
           activeAccordion={activeAccordion}
@@ -762,7 +770,7 @@ export default function Form({ fighters = null, setFighters }) {
       });
       return (
         <Accordion
-          key={keyIndex}
+          key={key}
           title={title}
           handleClick={handleClick}
           activeAccordion={activeAccordion}

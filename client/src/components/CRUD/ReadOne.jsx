@@ -97,18 +97,18 @@ export default function ReadOne({ fighter, handleDelete }) {
           handleClick={handleClick}
           hasOwnState
         >
-          {standard.groundKeys.map((groundKey, groundKeyIndex) => {
+          {standard.groundKeys.map((groundKey) => {
             const groundTitle = groundKey[0].toUpperCase() + groundKey.slice(1);
             return (
               <Accordion
-                key={groundKeyIndex}
+                key={groundTitle}
                 nestLevel="two"
                 title={groundTitle}
                 hasOwnState
               >
-                {fighter.moves.ground[groundKey].map((move, groundIndex) => {
+                {fighter.moves.ground[groundKey].map((move) => {
                   return (
-                    <AccordionItem key={groundIndex} nestLevel="three">
+                    <AccordionItem key={move.name} nestLevel="three">
                       {move.name}: {move.level}
                     </AccordionItem>
                   );
@@ -127,9 +127,9 @@ export default function ReadOne({ fighter, handleDelete }) {
           handleClick={handleClick}
           hasOwnState
         >
-          {fighter.moves[key].map((move, moveIndex) => {
+          {fighter.moves[key].map((move) => {
             return (
-              <AccordionItem key={moveIndex} nestLevel="two">
+              <AccordionItem key={move.name} nestLevel="two">
                 {move.name}: {move.level}
               </AccordionItem>
             );

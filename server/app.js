@@ -8,7 +8,12 @@ const mongoose = require("mongoose");
 // Local Import
 const Controller = require("./controller");
 const initialiseMongoose = require("./mongoose-config");
-initialiseMongoose(mongoose, process.env.DATABASE_URL);
+initialiseMongoose(
+  mongoose,
+  process.env.npm_lifecycle_event === "dev"
+    ? process.env.DEV_DATABASE_URL
+    : process.env.PROD_DATABASE_URL
+);
 
 // Middleware
 const app = express();

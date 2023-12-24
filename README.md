@@ -231,3 +231,11 @@ Style was added to the CRUD operations, it is now much more visually pleasing. A
 ### Setup Production Database and Connection
 
 Not much was done other than setting up the Cluster on MongoDB, supplying the connection string and testing it.
+
+### Fix Bugs, Use Environment Variables
+
+Due to a change in how ground moves were read from the standard.js file, a few lines were added to accomdate for that change.
+
+Fetch urls are driven by environment variables now and also depending on which script is run (dev or start) the backend will now know which database to connect to. Git ignore files were also updated.
+
+A few keys were also fixed.

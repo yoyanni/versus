@@ -27,7 +27,8 @@ export default function App() {
     };
 
     function fetchData() {
-      return fetch("https://versus.onrender.com/api/fighters")
+      const url = import.meta.env.VITE_API_URL;
+      return fetch(url)
         .then((res) => res.json())
         .then((data) => setFighters(data))
         .catch((err) => console.log(err));
