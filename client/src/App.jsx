@@ -5,10 +5,12 @@ import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import Fighters from "./routes/fighters";
 import Fighter from "./routes/fighter";
+import Versus from "./routes/versus";
 import Create from "./routes/create";
 import Update from "./routes/update";
 import Error from "./routes/error";
 import Home from "./routes/home";
+
 import "./App.css";
 
 export default function App() {
@@ -51,9 +53,12 @@ export default function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home fighters={fighters} />} />
         <Route
-          path="/"
-          element={fighters.length ? <Home fighters={fighters} /> : <Loading />}
+          path="/versus"
+          element={
+            fighters.length ? <Versus fighters={fighters} /> : <Loading />
+          }
         />
         <Route
           path="/fighters"

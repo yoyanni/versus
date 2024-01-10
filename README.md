@@ -239,3 +239,13 @@ Due to a change in how ground moves were read from the standard.js file, a few l
 Fetch urls are driven by environment variables now and also depending on which script is run (dev or start) the backend will now know which database to connect to. Git ignore files were also updated.
 
 A few keys were also fixed.
+
+### Add a Welcome page and Introduction to the UI
+
+A welcome page was added to greet the user to the website and help them if they are a first-time visiter. 
+
+The welcome page provides the option to go immediately to the main functionality of the website or a quick tour through the main UI of the versus functionality with the help of the **intro.js** library .
+
+Currently the welcome image is not ready and so I have just inserted a placeholder section for now.
+
+There is a bit of an issue with some of the intro.js tour steps and the versebar. It does not seem to like how the versebar is position: fixed and when it calculates the height of the whole application it adds a few more pixels here and there and so it seems to push the varsebar down sometimes.

@@ -1,0 +1,35 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--s5);
+  row-gap: var(--s6);
+  text-align: center;
+  color: var(--titleDarkFontColor)
+}
+
+.welcome__img {
+  border: 1px solid black;
+  height: 20rem; /* Random height at the moment */
+  margin-inline: var(--s4);
+}
+
+.welcome__links {
+  padding-inline: var(--s4);
+}
+
+.welcome__links__versus {
+  display: block;
+  width: 100%;
+  padding-block: var(--s3);
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: var(--red);
+  color: white;
+}
+.welcome__links__tour {
+  padding-block: var(--s3);
+}
+.welcome__links__tour__link {
+  padding-block: var(--s3);
+  color: var(--titleDarkFontColor);
+}
